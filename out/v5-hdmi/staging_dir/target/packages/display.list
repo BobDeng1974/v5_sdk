@@ -1,0 +1,9 @@
+./
+./usr
+./usr/lib
+./usr/lib/libhwdisplay.so
+./usr/include
+./usr/include/vo
+./usr/include/vo/hwdisplay.h
+./usr/include/vo/sunxi_display2.h
+./host

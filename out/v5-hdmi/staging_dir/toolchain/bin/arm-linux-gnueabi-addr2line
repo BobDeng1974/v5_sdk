@@ -1,0 +1,2 @@
+#!/bin/sh
+exec "$TOOLCHAIN_ROOT_DIR/bin/arm-linux-gnueabi-addr2line" "$@"

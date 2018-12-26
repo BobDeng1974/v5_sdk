@@ -1,0 +1,2 @@
+#!/bin/sh
+exec "$TOOLCHAIN_ROOT_DIR/bin/arm-linux-gnueabi-ld" ${STAGING_DIR:+-L "$STAGING_DIR/usr/lib" -rpath-link "$STAGING_DIR/usr/lib"} "$@"

@@ -1,0 +1,19 @@
+Source-Makefile: package/vecoo/x15/videodec2/Makefile
+Package: videodec2
+Submenu: X15
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libstdcpp
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: x15 decoder videodec2 library
+Maintainer: 
+Source: 
+Type: ipkg
+Description:   infotm x15 decoder videodec2 library
+
+@@
+
+

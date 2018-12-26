@@ -1,0 +1,18 @@
+Source-Makefile: package/vecoo/trecorderdemo/Makefile
+Package: trecorderdemo
+Version: 1-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libcedarx2.7
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: CedarX2.7 recorder utils for allwinner
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	CedarX2.7 recorder
+
+@@
+
+

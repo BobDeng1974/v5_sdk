@@ -1,0 +1,18 @@
+Source-Makefile: package/vecoo/sample/sample_virvi2venc2muxer_stabilization_video/Makefile
+Package: sample_virvi2venc2muxer
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +middleware-libs +libsample_confparser
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: sample for virvi2venc2muxer
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	it comes form v5 platform!
+
+@@
+
+

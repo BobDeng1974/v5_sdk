@@ -1,0 +1,18 @@
+Source-Makefile: package/vecoo/mtop/Makefile
+Package: mtop
+Version: 0.5-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: mtop for vecoo linux
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	it comes from Android 4.2!!
+
+@@
+
+

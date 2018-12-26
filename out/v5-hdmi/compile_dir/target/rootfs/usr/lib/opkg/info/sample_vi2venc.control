@@ -1,0 +1,8 @@
+Package: sample_vi2venc
+Version: 1
+Depends: libc, libssp, librt, libpthread, libstdcpp, middleware-libs, libsample_confparser, libmpp_comm
+Source: package/vecoo/sample/sample_vi2venc
+Section: utils
+Architecture: sun8iw12p1
+Installed-Size: 3677
+Description:  it comes form v5 platform!

@@ -1,0 +1,524 @@
+Package: alsa
+Version: 1
+Depends: libc, libssp, librt, libpthread, middleware-libs
+Source: package/vecoo/alsa
+Section: libs
+Architecture: sun8iw12p1
+Installed-Size: 34376
+Filename: alsa_1_sun8iw12p1.ipk
+Size: 34820
+MD5Sum: 4900e41649dc211253f47f2e321cd795
+SHA256sum: 24aafdf54bded14610e0dbc37e56b3ff4b3d3621a5f4bad863760824f0a0f95f
+Description:  contains many alsa libs
+
+Package: ethtool
+Version: 4.19-1
+Depends: libc, libssp, librt, libpthread
+Source: package/ethtool
+License: GPL-2.0
+LicenseFiles: COPYING
+Section: net
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Architecture: sun8iw12p1
+Installed-Size: 91765
+Filename: ethtool_4.19-1_sun8iw12p1.ipk
+Size: 92211
+MD5Sum: 892202385f2e45966b07b2f2957a9f24
+SHA256sum: f9de4448dd905177faad9470dbd5de26eb63324ce0ddadfc8ae4e17e45b281ad
+Description:  ethtool is a small utility for examining and tuning your ethernet-based
+ network interface
+
+Package: ffmpeg
+Version: 3.2.12-5
+Depends: libc, libssp, librt, libpthread, libpthread, libffmpeg-full
+Source: package/ffmpeg
+License: LGPL-2.1+ GPL-2+ LGPL-3
+LicenseFiles: COPYING.GPLv2 COPYING.GPLv3 COPYING.LGPLv2.1 COPYING.LGPLv3
+Section: multimedia
+Maintainer: Ted Hess <thess@kitschensync.net>, Ian Leonard <antonlacon@gmail.com>
+Architecture: sun8iw12p1
+Installed-Size: 84989
+Filename: ffmpeg_3.2.12-5_sun8iw12p1.ipk
+Size: 85785
+MD5Sum: 2c8e0016d8526a23213bb988fe472347
+SHA256sum: 3d7676e2cd9dcd57f64d34c05bcc75bdb8fe31f1acbd3ffab156300ff62e4f1a
+Description:  FFmpeg is a a software package that can record, convert and stream digital
+ audio and video in numerous formats.
+ 
+ FFmpeg licensing / patent issues are complex. It is the reponsibility of the
+ user to understand any requirements in this regard with its usage. See:
+ https://ffmpeg.org/legal.html for further information.
+ .
+ This package contains the FFmpeg command line tool.
+
+Package: ffserver
+Version: 3.2.12-5
+Depends: libc, libssp, librt, libpthread, libpthread, libffmpeg-full
+Source: package/ffmpeg
+License: LGPL-2.1+ GPL-2+ LGPL-3
+LicenseFiles: COPYING.GPLv2 COPYING.GPLv3 COPYING.LGPLv2.1 COPYING.LGPLv3
+Section: multimedia
+Maintainer: Ted Hess <thess@kitschensync.net>, Ian Leonard <antonlacon@gmail.com>
+Architecture: sun8iw12p1
+Installed-Size: 49593
+Filename: ffserver_3.2.12-5_sun8iw12p1.ipk
+Size: 50580
+MD5Sum: 83aec8e08548664111b9c45055418221
+SHA256sum: 4c86567583d8aaa450c4d227a225c407e2d574ff79299c7109e88506d16898f6
+Description:  FFmpeg is a a software package that can record, convert and stream digital
+ audio and video in numerous formats.
+ 
+ FFmpeg licensing / patent issues are complex. It is the reponsibility of the
+ user to understand any requirements in this regard with its usage. See:
+ https://ffmpeg.org/legal.html for further information.
+ .
+ This package contains the FFmpeg streaming server.
+
+Package: libatomic
+Version: -1
+Depends: libgcc
+Source: package/toolchain
+License: GPL-3.0-with-GCC-exception
+Section: libs
+Status: unknown hold not-installed
+Essential: yes
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: sun8iw12p1
+Installed-Size: 5077
+Filename: libatomic_-1_sun8iw12p1.ipk
+Size: 5798
+MD5Sum: 38e9e3b0e14be92ace6e0ee8c9bf7126
+SHA256sum: c1a3dbe6f6eeb3af4da4a53dd67fc2a689f121ee56a81a5b2d7199514ee72fae
+Description:  Atomic support library
+
+Package: libcutils
+Version: 1-1
+Depends: libc, libssp, librt, libpthread
+Source: package/vecoo/libs/libcutils
+Section: utils
+Architecture: sun8iw12p1
+Installed-Size: 14867
+Filename: libcutils_1-1_sun8iw12p1.ipk
+Size: 15478
+MD5Sum: fa21c35ccf0ca09d69e2574f0aa6f7d1
+SHA256sum: 38d07fc720aa41248af071f3885efe33ea045c6f0b26cd4f535c0b2b4405a047
+Description:  libcutils form Android L
+
+Package: libffmpeg-full
+Version: 3.2.12-5
+Depends: libc, libssp, librt, libpthread, libpthread, libpthread, zlib, libbz2, alsa-lib, shine
+Provides: libffmpeg
+Source: package/ffmpeg
+License: LGPL-2.1+ GPL-2+ LGPL-3
+LicenseFiles: COPYING.GPLv2 COPYING.GPLv3 COPYING.LGPLv2.1 COPYING.LGPLv3
+Section: libs
+Maintainer: Ted Hess <thess@kitschensync.net>, Ian Leonard <antonlacon@gmail.com>
+Architecture: sun8iw12p1
+Installed-Size: 4950129
+Filename: libffmpeg-full_3.2.12-5_sun8iw12p1.ipk
+Size: 4929668
+MD5Sum: eb3e976185c4d63875a463d88e56f64e
+SHA256sum: 414711d02ff196c201e063d3dd4fdac2f8bfaef4ac30a3562ca7405976e1522e
+Description:  FFmpeg is a a software package that can record, convert and stream digital
+ audio and video in numerous formats.
+ 
+ FFmpeg licensing / patent issues are complex. It is the reponsibility of the
+ user to understand any requirements in this regard with its usage. See:
+ https://ffmpeg.org/legal.html for further information.
+ .
+ This package contains full-featured FFmpeg shared libraries.
+
+Package: libgcc
+Version: -1
+Source: package/toolchain
+License: GPL-3.0-with-GCC-exception
+Section: libs
+Status: unknown hold not-installed
+Essential: yes
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: sun8iw12p1
+Installed-Size: 37738
+Filename: libgcc_-1_sun8iw12p1.ipk
+Size: 38326
+MD5Sum: 3557a91440f55da8fb00401c7868e134
+SHA256sum: 614c302495fb965cf4269de2a62ea2ad2b20fe586b4f1c8915f96e0657da0c58
+Description:  GCC support library
+
+Package: libglog
+Version: 1
+Depends: libc, libssp, librt, libpthread, libstdcpp
+Source: package/vecoo/glog
+Section: libs
+Architecture: sun8iw12p1
+Installed-Size: 36361
+Filename: libglog_1_sun8iw12p1.ipk
+Size: 36921
+MD5Sum: 1697f3baffd1128508f046ddeaf5512a
+SHA256sum: a6848fe5a478844732df01d7f66dbfcc251bc36254d71a992e5d0b8fc0cab24e
+Description:  C++ implementation of the Google logging module
+
+Package: libhwdisplay
+Version: 1
+Depends: libc, libssp, librt, libpthread, liblog, libcutils
+Source: package/vecoo/display
+Section: libs
+Architecture: sun8iw12p1
+Installed-Size: 8368
+Filename: libhwdisplay_1_sun8iw12p1.ipk
+Size: 9047
+MD5Sum: 83bd07de661c62fce5c8ca2b61e2240b
+SHA256sum: 991f78bf5c515e33550a3c9eb0a673bdc9f896572640ace7e884adb1550e28d4
+Description:  display library, it comes form v5 platform!
+
+Package: libion
+Version: 1
+Depends: libc, libssp, librt, libpthread, liblog, libcutils
+Source: package/vecoo/libion
+Section: libs
+Architecture: sun8iw12p1
+Installed-Size: 4608
+Filename: libion_1_sun8iw12p1.ipk
+Size: 5269
+MD5Sum: e5f44e393b1a5c75c921bd0e3f6e0cfc
+SHA256sum: 752542bd791646a20ad3671079f4035e94200ae7a85d7692d2f6f2d75d4804b7
+Description:  ion library, it comes form v5 platform!
+
+Package: libisp_ini
+Version: 1
+Depends: libc, libssp, librt, libpthread, liblog
+Source: package/vecoo/libisp
+Section: libs
+Architecture: sun8iw12p1
+Installed-Size: 236933
+Filename: libisp_ini_1_sun8iw12p1.ipk
+Size: 235237
+MD5Sum: 2aadf0f512fc34b1f92b0b5986296dca
+SHA256sum: cf14dd716d5dc47c0398605ec1f69e8393a1d6af0935950873b51690cd6d5296
+Description:  parser isp info from config file, come from v5 platform!
+
+Package: liblog
+Version: 1
+Depends: libc, libssp, librt, libpthread, libstdcpp, libglog
+Source: package/vecoo/liblog
+Section: libs
+Architecture: sun8iw12p1
+Installed-Size: 4011
+Filename: liblog_1_sun8iw12p1.ipk
+Size: 4681
+MD5Sum: e2949638a5c2d4a6b611888239c48cdc
+SHA256sum: 7cab2bd3d84083cb7645f38a494817ddfc4ab77284b81d666dc0ab64ce0d4182
+Description:  log library, it comes form v5 platform!
+
+Package: libmpp_comm
+Version: 1
+Depends: libc, libssp, librt, libpthread, middleware-libs, libsample_confparser
+Source: package/vecoo/mpp_comm
+Section: libs
+Architecture: sun8iw12p1
+Installed-Size: 12590
+Filename: libmpp_comm_1_sun8iw12p1.ipk
+Size: 13193
+MD5Sum: a5d20b4cfd420bba5e3f3abdc88b244b
+SHA256sum: 363f7b40f30690e89e7b3faf602c3817752782b253790a1fb0bfd8cefe665d68
+Description:  mpp comm library, it comes form v5 platform!
+
+Package: libpthread
+Version: -1
+Depends: libgcc
+Source: package/toolchain
+License: GPL-3.0-with-GCC-exception
+Section: libs
+Status: unknown hold not-installed
+Essential: yes
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: sun8iw12p1
+Installed-Size: 35763
+Filename: libpthread_-1_sun8iw12p1.ipk
+Size: 36531
+MD5Sum: 82e549757097a19939b9cf76d8fb63e8
+SHA256sum: c0c9b30649488ba63464632fd0e5dd19ac3e4ab64fdc1f870f1ce2944d31437c
+Description:  POSIX thread library
+
+Package: librt
+Version: -1
+Depends: libpthread
+Source: package/toolchain
+License: GPL-3.0-with-GCC-exception
+Section: libs
+Status: unknown hold not-installed
+Essential: yes
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: sun8iw12p1
+Installed-Size: 10832
+Filename: librt_-1_sun8iw12p1.ipk
+Size: 11606
+MD5Sum: da826a4ac46746ce6b4d327160eb6a1c
+SHA256sum: 16506426736ee4a8098f8e31b8c483e44286ac3c7fb6c660e5b813de930b822e
+Description:  POSIX.1b RealTime extension library
+
+Package: libsample_confparser
+Version: 1
+Depends: libc, libssp, librt, libpthread, middleware-libs
+Source: package/vecoo/sample/configfileparser
+Section: libs
+Architecture: sun8iw12p1
+Installed-Size: 2355
+Filename: libsample_confparser_1_sun8iw12p1.ipk
+Size: 3091
+MD5Sum: c912e704e3e89c269d786c957db6392c
+SHA256sum: a77d24f47710347393dd2ad776de7823783a8b7fc014e411dbd768d97c7e047d
+Description:  library of parser conf files, it comes form v5 platform!
+
+Package: libssp
+Version: -1
+Source: package/toolchain
+License: GPL-3.0-with-GCC-exception
+Section: libs
+Status: unknown hold not-installed
+Essential: yes
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: sun8iw12p1
+Installed-Size: 3041
+Filename: libssp_-1_sun8iw12p1.ipk
+Size: 3802
+MD5Sum: 33a7c1d25321afe6f377a711b5b15793
+SHA256sum: eed08c1df123e6cb1e04d5f11efecca37ebb34d2f38ef40122fa36cc6a5f1be8
+Description:  GCC support library
+
+Package: libstdcpp
+Version: -1
+Source: package/toolchain
+License: GPL-3.0-with-GCC-exception
+Section: libs
+Status: unknown hold not-installed
+Essential: yes
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: sun8iw12p1
+Installed-Size: 377977
+Filename: libstdcpp_-1_sun8iw12p1.ipk
+Size: 377566
+MD5Sum: 285b28889a2e7bac9c38b528fbf62e23
+SHA256sum: 68f674d285626f31c4c71498e77cff9e0679b01a3376f8e0572cce978c39c1bc
+Description:  GNU Standard C++ Library v3
+
+Package: middleware-libs
+Version: 1
+Depends: libc, libssp, librt, libpthread, libstdcpp, libcutils, liblog, libion, libhwdisplay, libisp_ini
+Source: package/vecoo/middleware-libs
+Section: libs
+Architecture: sun8iw12p1
+Installed-Size: 2427745
+Filename: middleware-libs_1_sun8iw12p1.ipk
+Size: 2412389
+MD5Sum: ce973eee9c956d1dd881a803b8bf4681
+SHA256sum: a39aac83a1cdb2975c7ea795903bdebfcdf6eabb7feba465d885f122abea773a
+Description:  contains many middleware libs
+
+Package: sample_ai2aenc2muxer
+Version: 1
+Depends: libc, libssp, librt, libpthread, middleware-libs, libsample_confparser
+Source: package/vecoo/sample/sample_ai2aenc2muxer
+Section: utils
+Architecture: sun8iw12p1
+Installed-Size: 5156
+Filename: sample_ai2aenc2muxer_1_sun8iw12p1.ipk
+Size: 5811
+MD5Sum: b5294fc527be35c2a394a6ea07f6d3c0
+SHA256sum: ed29d2da35497752a4da08c515cdfcbae4cfef3a0806ac81a62ee86e30011e72
+Description:  it comes form v5 platform!
+
+Package: sample_demux2adec2ao
+Version: 1
+Depends: libc, libssp, librt, libpthread, middleware-libs, libsample_confparser
+Source: package/vecoo/sample/sample_demux2adec2ao
+Section: utils
+Architecture: sun8iw12p1
+Installed-Size: 5655
+Filename: sample_demux2adec2ao_1_sun8iw12p1.ipk
+Size: 6351
+MD5Sum: 11503236b95944eeb0fe1111dcf61ee0
+SHA256sum: 1d2b3b913ad3076d0640417f03a9cafa9171b2f6628e062b4032370411be8001
+Description:  it comes form v5 platform!
+
+Package: sample_demux2vdec2vo
+Version: 1
+Depends: libc, libssp, librt, libpthread, middleware-libs, libsample_confparser
+Source: package/vecoo/sample/sample_demux2vdec2vo
+Section: utils
+Architecture: sun8iw12p1
+Installed-Size: 6067
+Filename: sample_demux2vdec2vo_1_sun8iw12p1.ipk
+Size: 6753
+MD5Sum: dc6fa4b2357ac01422277255511b797c
+SHA256sum: 4f1dba75426144de943259cdf49da94b2b69cb6436c91444d0ae08adcd346b6d
+Description:  it comes form v5 platform!
+
+Package: sample_shane
+Version: 1
+Depends: libc, libssp, librt, libpthread, middleware-libs, libsample_confparseir, libmpp_comm
+Source: package/video
+Section: utils
+Architecture: sun8iw12p1
+Installed-Size: 3370
+Filename: sample_shane_1_sun8iw12p1.ipk
+Size: 4049
+MD5Sum: 816cf3c9956b9a37733c66183af8d1b8
+SHA256sum: 2926cbf7ed34e43b30bd73d5846db1fbb5f7c72658af98b6ee135e7ce9349a03
+Description:  it comes form v5 platform!
+
+Package: sample_vi2venc
+Version: 1
+Depends: libc, libssp, librt, libpthread, libstdcpp, middleware-libs, libsample_confparser, libmpp_comm
+Source: package/vecoo/sample/sample_vi2venc
+Section: utils
+Architecture: sun8iw12p1
+Installed-Size: 3677
+Filename: sample_vi2venc_1_sun8iw12p1.ipk
+Size: 4363
+MD5Sum: 3c0debd9a8a8218452ff367396df8b14
+SHA256sum: ae6e81faebfc9c13a8bd7ec3cc29250f7ebfb1e1a8562134188988c86d576b16
+Description:  it comes form v5 platform!
+
+Package: sample_vi2venc_vdec2vo
+Version: 1
+Depends: libc, libssp, librt, libpthread, middleware-libs, libsample_confparseir, libmpp_comm
+Source: package/sample_vi2venc_vdec2vo
+Section: utils
+Architecture: sun8iw12p1
+Installed-Size: 4227
+Filename: sample_vi2venc_vdec2vo_1_sun8iw12p1.ipk
+Size: 4930
+MD5Sum: c7050ca1087ea60778038fa6305ebbd0
+SHA256sum: 064e23fbe04f455f87829593c1ac956c6ebdd438373289dc08b96622d83029ea
+Description:  it comes form v5 platform!
+
+Package: sample_virvi2fish2venc
+Version: 1
+Depends: libc, libssp, librt, libpthread, middleware-libs, libsample_confparser
+Source: package/vecoo/sample/sample_virvi2fish2venc
+Section: utils
+Architecture: sun8iw12p1
+Installed-Size: 9079
+Filename: sample_virvi2fish2venc_1_sun8iw12p1.ipk
+Size: 9795
+MD5Sum: 4ab0d4725760a6a681806decb7e08d32
+SHA256sum: 855b8f5a17b7aa9800f3d72ce0064227bd946926b7b30a9f8282f6a2188dd853
+Description:  it comes form v5 platform!
+
+Package: sample_virvi2fish2vo
+Version: 1
+Depends: libc, libssp, librt, libpthread, middleware-libs, libsample_confparser
+Source: package/vecoo/sample/sample_virvi2fish2vo
+Section: utils
+Architecture: sun8iw12p1
+Installed-Size: 8281
+Filename: sample_virvi2fish2vo_1_sun8iw12p1.ipk
+Size: 9006
+MD5Sum: 7891075dd2d7357e4a9294dd89416dfd
+SHA256sum: d50ec18cc0b180999a1d074dfc822948717324c4d41b5c95a7ad05437c19c36a
+Description:  it comes form v5 platform!
+
+Package: sample_virvi2venc2muxer
+Version: 1
+Depends: libc, libssp, librt, libpthread, middleware-libs, libsample_confparser
+Source: package/vecoo/sample/sample_virvi2venc2muxer_stabilization_video
+Section: utils
+Architecture: sun8iw12p1
+Installed-Size: 8481
+Filename: sample_virvi2venc2muxer_1_sun8iw12p1.ipk
+Size: 9211
+MD5Sum: 64e3b71553c0e62860f50027c569e099
+SHA256sum: b96a23de9e65beeb6fe5964877bafe5bf222bef98bf70d8c5754e088760dae89
+Description:  it comes form v5 platform!
+
+Package: sample_virvi2vo
+Version: 1
+Depends: libc, libssp, librt, libpthread, middleware-libs, libsample_confparser
+Source: package/vecoo/sample/sample_virvi2vo
+Section: utils
+Architecture: sun8iw12p1
+Installed-Size: 7932
+Filename: sample_virvi2vo_1_sun8iw12p1.ipk
+Size: 8619
+MD5Sum: 66e7562ecad04a2ec324c312a8c7c087
+SHA256sum: f89d01590452930f8fefeb59480f4eac8c45a7c7e244241723a6e588b13779fe
+Description:  it comes form v5 platform!
+
+Package: sample_vo
+Version: 1
+Depends: libc, libssp, librt, libpthread, middleware-libs, libsample_confparser
+Source: package/vecoo/sample/sample_vo
+Section: utils
+Architecture: sun8iw12p1
+Installed-Size: 6743
+Filename: sample_vo_1_sun8iw12p1.ipk
+Size: 7488
+MD5Sum: 3b1e0a7ffbbfbfc4bfc34f5f5245de4e
+SHA256sum: 6315e66fdc8f56b26bdbcc443ec90398279298282d2dc6dc848c1b923de8a910
+Description:  it comes form v5 platform!
+
+Package: shane_client
+Version: 1
+Depends: libc, libssp, librt, libpthread, middleware-libs, libsample_confparser
+Source: package/v5_client
+Section: utils
+Architecture: sun8iw12p1
+Installed-Size: 15260
+Filename: shane_client_1_sun8iw12p1.ipk
+Size: 15842
+MD5Sum: e1f08d470b1f235392a905fb3f75bc59
+SHA256sum: 5cf5831c811f7a825708fd01d86cbd56c9c0fa1640e9874678c229b906fa2432
+Description:  it comes form v5 platform!
+
+Package: shane_server
+Version: 1
+Depends: libc, libssp, librt, libpthread, middleware-libs, libsample_confparser
+Source: package/v5_server
+Section: utils
+Architecture: sun8iw12p1
+Installed-Size: 15469
+Filename: shane_server_1_sun8iw12p1.ipk
+Size: 16049
+MD5Sum: 207b11a2bb728b235427b2d6e7697f84
+SHA256sum: 13ac2e90e2e9f7318069079dc2b0ce9c8de3c92e153ca7b978c37f3ba41376af
+Description:  it comes form v5 platform!
+
+Package: tcp_client
+Version: 1
+Depends: libc, libssp, librt, libpthread, middleware-libs, libsample_confparser, libmpp_comm
+Source: package/tcp_client
+Section: utils
+Architecture: sun8iw12p1
+Installed-Size: 4702
+Filename: tcp_client_1_sun8iw12p1.ipk
+Size: 5389
+MD5Sum: e75a97e74a723b580e523b273c655984
+SHA256sum: 13178f98d222549667fe96be225e00c31db4bc89f7ae44b00453c3c4fc4a1f86
+Description:  it comes form v5 platform!
+
+Package: tcp_server
+Version: 1
+Depends: libc, libssp, librt, libpthread, middleware-libs, libsample_confparser, libmpp_comm
+Source: package/tcp_server
+Section: utils
+Architecture: sun8iw12p1
+Installed-Size: 5386
+Filename: tcp_server_1_sun8iw12p1.ipk
+Size: 6091
+MD5Sum: 18be77b18045b78d8fae6c02b9829156
+SHA256sum: 6609a2b494708de6ff39d00105c5197d3eb9c885f014b3c1f6e37fc23e55bb2c
+Description:  it comes form v5 platform!
+
+Package: tcp_server_local
+Version: 1
+Depends: libc, libssp, librt, libpthread, middleware-libs, libsample_confparser, libmpp_comm
+Source: package/tcp_server_local
+Section: utils
+Architecture: sun8iw12p1
+Installed-Size: 4111
+Filename: tcp_server_local_1_sun8iw12p1.ipk
+Size: 4800
+MD5Sum: 690e1b5fcecbc2797e8482d5e306913e
+SHA256sum: efa4a873fb08d9e0899deef87f9e960afabb4ab46fd71ccf28126c886eee5591
+Description:  it comes form v5 platform!
+

@@ -1,0 +1,8 @@
+Package: sample_demux2adec2ao
+Version: 1
+Depends: libc, libssp, librt, libpthread, middleware-libs, libsample_confparser
+Source: package/vecoo/sample/sample_demux2adec2ao
+Section: utils
+Architecture: sun8iw12p1
+Installed-Size: 5655
+Description:  it comes form v5 platform!

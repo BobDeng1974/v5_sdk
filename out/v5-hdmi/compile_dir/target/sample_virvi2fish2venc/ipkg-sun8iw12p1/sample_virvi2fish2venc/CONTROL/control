@@ -1,0 +1,8 @@
+Package: sample_virvi2fish2venc
+Version: 1
+Depends: libc, libssp, librt, libpthread, middleware-libs, libsample_confparser
+Source: package/vecoo/sample/sample_virvi2fish2venc
+Section: utils
+Architecture: sun8iw12p1
+Installed-Size: 9079
+Description:  it comes form v5 platform!

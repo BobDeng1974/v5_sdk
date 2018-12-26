@@ -1,0 +1,19 @@
+/home/shane/Downloads/action/New_SDK/Vecoo-SDK-v5-hdmi.Linux-x86_64/build/board.mk:9: /home/shane/Downloads/action/New_SDK/Vecoo-SDK-v5-hdmi.Linux-x86_64/target/vecoo/-common/BoardConfigCommon.mk: No such file or directory
+/home/shane/Downloads/action/New_SDK/Vecoo-SDK-v5-hdmi.Linux-x86_64/build/board.mk:10: /home/shane/Downloads/action/New_SDK/Vecoo-SDK-v5-hdmi.Linux-x86_64/target/vecoo//BoardConfig.mk: No such file or directory
+Package: rtsp_pusher
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +middleware-libs +libsample_confparser +libmpp_comm
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: sample shane
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	it comes form v5 platform!
+
+@@
+
+make[3]: *** No rule to make target `/home/shane/Downloads/action/New_SDK/Vecoo-SDK-v5-hdmi.Linux-x86_64/target/vecoo//BoardConfig.mk'.  Stop.

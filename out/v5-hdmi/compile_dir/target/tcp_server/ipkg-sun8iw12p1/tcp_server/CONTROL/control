@@ -1,0 +1,8 @@
+Package: tcp_server
+Version: 1
+Depends: libc, libssp, librt, libpthread, middleware-libs, libsample_confparser, libmpp_comm
+Source: package/tcp_server
+Section: utils
+Architecture: sun8iw12p1
+Installed-Size: 5386
+Description:  it comes form v5 platform!

@@ -1,0 +1,8 @@
+Package: liblog
+Version: 1
+Depends: libc, libssp, librt, libpthread, libstdcpp, libglog
+Source: package/vecoo/liblog
+Section: libs
+Architecture: sun8iw12p1
+Installed-Size: 4011
+Description:  log library, it comes form v5 platform!

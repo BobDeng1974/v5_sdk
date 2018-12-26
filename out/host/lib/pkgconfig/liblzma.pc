@@ -1,0 +1,19 @@
+#
+# Author: Lasse Collin
+#
+# This file has been put into the public domain.
+# You can do whatever you want with this file.
+#
+
+prefix=/home/wanlong/workspace/v5/out/host
+exec_prefix=/home/wanlong/workspace/v5/out/host
+libdir=/home/wanlong/workspace/v5/out/host/lib
+includedir=/home/wanlong/workspace/v5/out/host/include
+
+Name: liblzma
+Description: General purpose data compression library
+URL: http://tukaani.org/xz/
+Version: 5.2.2
+Cflags: -I${includedir}
+Libs: -L${libdir} -llzma
+Libs.private: -pthread 

@@ -1,0 +1,18 @@
+Source-Makefile: package/vecoo/isp_tool_module/Makefile
+Package: awTuningApp
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +middleware-libs +libisp_ini +libsample_confparser
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: awTuningApp
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	it comes form v5 platform!
+
+@@
+
+

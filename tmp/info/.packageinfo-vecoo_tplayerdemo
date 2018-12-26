@@ -1,0 +1,18 @@
+Source-Makefile: package/vecoo/tplayerdemo/Makefile
+Package: tplayerdemo
+Version: 1-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libcedarx2.7 +alsa-utils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: tplayerdemo which use tplayer
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	CedarX2.7 tplayerdemo
+
+@@
+
+

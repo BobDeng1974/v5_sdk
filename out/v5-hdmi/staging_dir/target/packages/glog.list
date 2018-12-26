@@ -1,0 +1,15 @@
+./
+./usr
+./usr/lib
+./usr/lib/libglog.so.0
+./usr/lib/libglog.a
+./usr/lib/libglog.so
+./usr/lib/libglog.so.0.0.0
+./usr/include
+./usr/include/glog
+./usr/include/glog/vlog_is_on.h
+./usr/include/glog/raw_logging.h
+./usr/include/glog/stl_logging.h
+./usr/include/glog/log_severity.h
+./usr/include/glog/logging.h
+./host

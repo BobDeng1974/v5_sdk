@@ -1,0 +1,8 @@
+Package: sample_ai2aenc2muxer
+Version: 1
+Depends: libc, libssp, librt, libpthread, middleware-libs, libsample_confparser
+Source: package/vecoo/sample/sample_ai2aenc2muxer
+Section: utils
+Architecture: sun8iw12p1
+Installed-Size: 5156
+Description:  it comes form v5 platform!

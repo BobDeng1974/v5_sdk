@@ -1,0 +1,11 @@
+prefix=/home/wanlong/workspace/v5/out/v5-hdmi/staging_dir/target/host
+exec_prefix=/home/wanlong/workspace/v5/out/v5-hdmi/staging_dir/target/host
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: GThread
+Description: Thread support for GLib
+Requires: glib-2.0
+Version: 2.54.1
+Libs: -L${libdir} -lgthread-2.0 -pthread
+Cflags: -pthread

@@ -1,0 +1,7 @@
+libc
+libgcc
+libatomic
+libssp
+libstdcpp
+libpthread
+librt

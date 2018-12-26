@@ -1,0 +1,10 @@
+c1fd09e7bd0925566a7649332622e8f9 *boot.img
+3c13a7ecdb2357627086a982688a96d1 *rootfs.img
+099ed4220a96da45448ece590c028d39 *sha256sums
+01731552ba590a84278d07c3c333f50e *v5-hdmi-sysupgrade.img
+751ebf788591765e3b555df85200667b *v5-hdmi-uImage
+97cac1f40e2e22dffd6fb4325f0fcd56 *vecoo_v5-hdmi_uart0.img
+0f117c5a1b4ef0fc21f86b86dbb5ea54 *vecoo_v5-hdmi_uart0_20181119.img
+e49af6a4e273e5ec1b18d2e64b40feb4 *vecoo_v5-hdmi_uart0_20181123.img
+d74a3a417012421164036e8727ff73ab *vecoo_v5-hdmi_uart0_20181210.img
+2edb4dce4687cdd7ccf7829e64d9fb9c *vecoo_v5-hdmi_uart0_server.img

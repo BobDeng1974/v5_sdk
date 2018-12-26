@@ -1,0 +1,18 @@
+Source-Makefile: package/vecoo/middleware-libs/Makefile
+Package: middleware-libs
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libstdcpp +libcutils +liblog +libion +libhwdisplay +libisp_ini
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Vecoo
+Title: V5 middleware library
+Maintainer: 
+Source: 
+Type: ipkg
+Description:   contains many middleware libs
+
+@@
+
+

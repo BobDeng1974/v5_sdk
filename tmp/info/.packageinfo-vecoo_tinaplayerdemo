@@ -1,0 +1,18 @@
+Source-Makefile: package/vecoo/tinaplayerdemo/Makefile
+Package: tinaplayerdemo
+Version: 1-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libcedarx2.7 +alsa-utils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: CedarX2.6 tina player utils for softwinner
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	CedarX2.6 tina player
+
+@@
+
+

@@ -1,0 +1,8 @@
+Package: sample_vo
+Version: 1
+Depends: libc, libssp, librt, libpthread, middleware-libs, libsample_confparser
+Source: package/vecoo/sample/sample_vo
+Section: utils
+Architecture: sun8iw12p1
+Installed-Size: 6743
+Description:  it comes form v5 platform!

@@ -1,0 +1,8 @@
+Package: middleware-libs
+Version: 1
+Depends: libc, libssp, librt, libpthread, libstdcpp, libcutils, liblog, libion, libhwdisplay, libisp_ini
+Source: package/vecoo/middleware-libs
+Section: libs
+Architecture: sun8iw12p1
+Installed-Size: 2427745
+Description:  contains many middleware libs

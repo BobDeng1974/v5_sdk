@@ -1,0 +1,18 @@
+Source-Makefile: package/vecoo/display/Makefile
+Package: libhwdisplay
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +liblog +libcutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Vecoo
+Title: v5 display library
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	display library, it comes form v5 platform!
+
+@@
+
+

@@ -1,0 +1,18 @@
+Source-Makefile: package/vecoo/libs/libawresample/Makefile
+Package: libresample
+Version: 1-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: libresample
+Maintainer: 
+Source: 
+Type: ipkg
+Description:   libresample
+
+@@
+
+

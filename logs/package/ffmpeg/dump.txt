@@ -1,0 +1,2 @@
+Makefile:230: /package.mk: No such file or directory
+make[2]: *** No rule to make target `/package.mk'.  Stop.

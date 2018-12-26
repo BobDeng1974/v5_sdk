@@ -1,0 +1,101 @@
+choice
+	prompt "Target System"
+	default TARGET_sunxi
+	reset if !DEVEL
+	
+config TARGET_v5_hdmi
+	bool "v5-hdmi"
+	select LINUX_4_4
+	select DISPLAY_SUPPORT
+	select USES_DEVICETREE
+	select USES_EXT4
+	select HAS_FPU
+	select GPIO_SUPPORT
+	select RTC_SUPPORT
+	select USB_SUPPORT
+	select arm
+
+
+endchoice
+
+choice
+	prompt "Subtarget" if HAS_SUBTARGETS
+
+endchoice
+
+choice
+	prompt "Target Profile"
+
+config TARGET_v5_hdmi_ 
+	bool "vecoo"
+	depends on TARGET_v5_hdmi
+	
+
+	select DEFAULT_base-files
+	select DEFAULT_busybox
+	select DEFAULT_dropbear
+	select DEFAULT_fstools
+	select DEFAULT_libc
+	select DEFAULT_libgcc
+	select DEFAULT_mtd
+	select DEFAULT_netifd
+	select DEFAULT_opkg
+	select DEFAULT_uci
+	select DEFAULT_uclient-fetch
+
+endchoice
+
+config HAS_SUBTARGETS
+	bool
+
+config TARGET_BOARD
+	string
+
+		default "v5-hdmi" if TARGET_v5_hdmi
+
+config DEFAULT_TARGET_OPTIMIZATION
+	string
+	default "-Os -pipe -march=armv7-a -mtune=cortex-a7 -mfpu=neon" if TARGET_v5_hdmi
+	default "-Os -pipe -funit-at-a-time"
+
+config CPU_TYPE
+	string
+	default "cortex-a7+neon" if TARGET_v5_hdmi
+	default ""
+
+config LINUX_4_4
+	bool
+
+	config DEFAULT_base-files
+		bool
+
+	config DEFAULT_busybox
+		bool
+
+	config DEFAULT_dropbear
+		bool
+
+	config DEFAULT_fstools
+		bool
+
+	config DEFAULT_libc
+		bool
+
+	config DEFAULT_libgcc
+		bool
+
+	config DEFAULT_mtd
+		bool
+
+	config DEFAULT_netifd
+		bool
+
+	config DEFAULT_opkg
+		bool
+
+	config DEFAULT_uci
+		bool
+
+	config DEFAULT_uclient-fetch
+		bool
+

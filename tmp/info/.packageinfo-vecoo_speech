@@ -1,0 +1,18 @@
+Source-Makefile: package/vecoo/speech/Makefile
+Package: speech
+Version: 0.0.11-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libpthread +libstdcpp +alsa-lib +libresample
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: speech
+Maintainer: 
+Source: 
+Type: ipkg
+Description: speech
+
+@@
+
+

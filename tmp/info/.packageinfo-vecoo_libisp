@@ -1,0 +1,18 @@
+Source-Makefile: package/vecoo/libisp/Makefile
+Package: libisp_ini
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +liblog
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Vecoo
+Title: parser isp info from config file
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	parser isp info from config file, come from v5 platform!
+
+@@
+
+

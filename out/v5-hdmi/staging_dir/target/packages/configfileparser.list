@@ -1,0 +1,7 @@
+./
+./usr
+./usr/lib
+./usr/lib/libsample_confparser.so
+./usr/include
+./usr/include/confparser.h
+./host

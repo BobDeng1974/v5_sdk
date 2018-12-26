@@ -1,0 +1,8 @@
+Package: libisp_ini
+Version: 1
+Depends: libc, libssp, librt, libpthread, liblog
+Source: package/vecoo/libisp
+Section: libs
+Architecture: sun8iw12p1
+Installed-Size: 236933
+Description:  parser isp info from config file, come from v5 platform!

@@ -1,0 +1,8 @@
+Package: shane_client
+Version: 1
+Depends: libc, libssp, librt, libpthread, middleware-libs, libsample_confparser
+Source: package/v5_client
+Section: utils
+Architecture: sun8iw12p1
+Installed-Size: 15983
+Description:  it comes form v5 platform!

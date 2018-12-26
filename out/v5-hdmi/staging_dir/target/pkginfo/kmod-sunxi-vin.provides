@@ -1,0 +1,4 @@
+lt6911_mipi.ko
+videobuf2-dma-contig.ko
+vin_io.ko
+vin_v4l2.ko

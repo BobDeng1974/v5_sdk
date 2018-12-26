@@ -1,0 +1,18 @@
+Source-Makefile: package/rtsp_pusher/Makefile
+Package: rtsp_pusher
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +middleware-libs +libsample_confparser +libmpp_comm
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: sample shane
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	it comes form v5 platform!
+
+@@
+
+

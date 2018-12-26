@@ -1,0 +1,8 @@
+./
+./usr
+./usr/lib
+./usr/lib/libmpp_comm.so
+./usr/include
+./usr/include/mpp_comm.h
+./usr/include/common.h
+./host

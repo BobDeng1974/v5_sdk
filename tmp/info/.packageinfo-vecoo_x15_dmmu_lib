@@ -1,0 +1,19 @@
+Source-Makefile: package/vecoo/x15/dmmu_lib/Makefile
+Package: dmmu_lib
+Submenu: X15
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: x15 decoder dmmu_lib library
+Maintainer: 
+Source: 
+Type: ipkg
+Description:   infotm x15 decoder dmmu_lib library
+
+@@
+
+

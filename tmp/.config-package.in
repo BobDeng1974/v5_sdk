@@ -1,0 +1,1614 @@
+menuconfig IMAGEOPT
+	bool "Image configuration"
+	default n
+source "package/*/image-config.in"
+menu "Base system"
+
+	config PACKAGE_libatomic
+		tristate "libatomic......................................... Atomic support library"
+		default y if DEFAULT_libatomic
+		default m if ALL
+		select PACKAGE_libgcc
+		help
+		 Atomic support library
+		 http://gcc.gnu.org/
+		 Felix Fietkau <nbd@openwrt.org>
+
+
+		menu "Configuration"
+			depends on EXTERNAL_TOOLCHAIN && PACKAGE_libatomic
+	
+		config LIBATOMIC_ROOT_DIR
+			string
+			prompt "libatomic shared library base directory"
+			depends on EXTERNAL_TOOLCHAIN && PACKAGE_libatomic
+			default TOOLCHAIN_ROOT  if !NATIVE_TOOLCHAIN
+			default "/"  if NATIVE_TOOLCHAIN
+	
+		config LIBATOMIC_FILE_SPEC
+			string
+			prompt "libatomic shared library files (use wildcards)"
+			depends on EXTERNAL_TOOLCHAIN && PACKAGE_libatomic
+			default "./lib/libatomic.so.*"
+	
+		endmenu
+
+	config PACKAGE_libc
+		tristate "libc........................................................... C library"
+		default y if DEFAULT_libc
+		default m if ALL
+		select PACKAGE_libgcc
+		help
+		 C library
+		 Felix Fietkau <nbd@openwrt.org>
+
+
+		menu "Configuration"
+		depends on EXTERNAL_TOOLCHAIN && PACKAGE_libc
+	
+		config LIBC_ROOT_DIR
+			string
+			prompt "libc shared library base directory"
+			depends on EXTERNAL_TOOLCHAIN && PACKAGE_libc
+			default TOOLCHAIN_ROOT  if !NATIVE_TOOLCHAIN
+			default "/"  if NATIVE_TOOLCHAIN
+	
+		config LIBC_FILE_SPEC
+			string
+			prompt "libc shared library files (use wildcards)"
+			depends on EXTERNAL_TOOLCHAIN && PACKAGE_libc
+			default "./lib/ld{-*.so,-linux*.so.*} ./lib/lib{anl,c,gomp,cidn,crypt,dl,m,nsl,nss_dns,nss_files,resolv,util}{-*.so,.so.*}"
+	
+		endmenu
+
+	config PACKAGE_libgcc
+		tristate "libgcc............................................... GCC support library"
+		default y if DEFAULT_libgcc
+		default m if ALL
+		help
+		 GCC support library
+		 http://gcc.gnu.org/
+		 Felix Fietkau <nbd@openwrt.org>
+
+
+		menu "Configuration"
+			depends on EXTERNAL_TOOLCHAIN && PACKAGE_libgcc
+	
+		config LIBGCC_ROOT_DIR
+			string
+			prompt "libgcc shared library base directory"
+			depends on EXTERNAL_TOOLCHAIN && PACKAGE_libgcc
+			default TOOLCHAIN_ROOT  if !NATIVE_TOOLCHAIN
+			default "/"  if NATIVE_TOOLCHAIN
+	
+		config LIBGCC_FILE_SPEC
+			string
+			prompt "libgcc shared library files (use wildcards)"
+			depends on EXTERNAL_TOOLCHAIN && PACKAGE_libgcc
+			default "./lib/libgcc_s.so.*"
+	
+		endmenu
+
+	config PACKAGE_libgfortran
+		tristate "libgfortran..................................... GFortran support library"
+		default y if DEFAULT_libgfortran
+		default m if ALL
+		depends on INSTALL_GFORTRAN
+		help
+		 GFortran support library
+		 http://gcc.gnu.org/
+		 Felix Fietkau <nbd@openwrt.org>
+
+
+		menu "Configuration"
+			depends on EXTERNAL_TOOLCHAIN && PACKAGE_libgfortran
+	
+		config LIBGFORTRAN_ROOT_DIR
+			string
+			prompt "libgfortran shared library base directory"
+			depends on EXTERNAL_TOOLCHAIN && PACKAGE_libgfortran
+			default TOOLCHAIN_ROOT  if !NATIVE_TOOLCHAIN
+			default "/"  if NATIVE_TOOLCHAIN
+	
+		config LIBGFORTRAN_FILE_SPEC
+			string
+			prompt "libgfortran shared library files (use wildcards)"
+			depends on EXTERNAL_TOOLCHAIN && PACKAGE_libgfortran
+			default "./usr/lib/libgfortran.so.*"
+	
+		endmenu
+
+	config PACKAGE_libpthread
+		tristate "libpthread.......................................... POSIX thread library"
+		default y if DEFAULT_libpthread
+		default m if ALL
+		select PACKAGE_libgcc
+		help
+		 POSIX thread library
+		 Felix Fietkau <nbd@openwrt.org>
+
+
+		menu "Configuration"
+		depends on EXTERNAL_TOOLCHAIN && PACKAGE_libpthread
+	
+		config LIBPTHREAD_ROOT_DIR
+			string
+			prompt "libpthread shared library base directory"
+			depends on EXTERNAL_TOOLCHAIN && PACKAGE_libpthread
+			default TOOLCHAIN_ROOT  if !NATIVE_TOOLCHAIN
+			default "/"  if NATIVE_TOOLCHAIN
+	
+		config LIBPTHREAD_FILE_SPEC
+			string
+			prompt "libpthread shared library files (use wildcards)"
+			depends on EXTERNAL_TOOLCHAIN && PACKAGE_libpthread
+			default "./lib/libpthread{-*.so,.so.*}"
+	
+		endmenu
+
+	config PACKAGE_librt
+		tristate "librt................................ POSIX.1b RealTime extension library"
+		default y if DEFAULT_librt
+		default m if ALL
+		select PACKAGE_libpthread
+		help
+		 POSIX.1b RealTime extension library
+		 Felix Fietkau <nbd@openwrt.org>
+
+
+		menu "Configuration"
+		depends on EXTERNAL_TOOLCHAIN && PACKAGE_librt
+	
+		config LIBRT_ROOT_DIR
+			string
+			prompt "librt shared library base directory"
+			depends on EXTERNAL_TOOLCHAIN && PACKAGE_librt
+			default TOOLCHAIN_ROOT  if !NATIVE_TOOLCHAIN
+			default "/"  if NATIVE_TOOLCHAIN
+	
+		config LIBRT_FILE_SPEC
+			string
+			prompt "librt shared library files (use wildcards)"
+			depends on EXTERNAL_TOOLCHAIN && PACKAGE_librt
+			default "./lib/librt{-*.so,.so.*}"
+	
+		endmenu
+
+	config PACKAGE_libssp
+		tristate "libssp............................................... GCC support library"
+		default y if DEFAULT_libssp
+		default m if ALL
+		depends on SSP_SUPPORT
+		help
+		 GCC support library
+		 http://gcc.gnu.org/
+		 Felix Fietkau <nbd@openwrt.org>
+
+
+		menu "Configuration"
+			depends on EXTERNAL_TOOLCHAIN && PACKAGE_libssp
+	
+		config LIBSSP_ROOT_DIR
+			string
+			prompt "libssp shared library base directory"
+			depends on EXTERNAL_TOOLCHAIN && PACKAGE_libssp
+			default TOOLCHAIN_ROOT  if !NATIVE_TOOLCHAIN
+			default "/"  if NATIVE_TOOLCHAIN
+	
+		config LIBSSP_FILE_SPEC
+			string
+			prompt "libssp shared library files (use wildcards)"
+			depends on EXTERNAL_TOOLCHAIN && PACKAGE_libssp
+			default "./lib/libssp.so.*"
+	
+		endmenu
+
+	config PACKAGE_libstdcpp
+		tristate "libstdcpp.................................... GNU Standard C++ Library v3"
+		default y if DEFAULT_libstdcpp
+		default m if ALL
+		help
+		 GNU Standard C++ Library v3
+		 http://gcc.gnu.org/
+		 Felix Fietkau <nbd@openwrt.org>
+
+
+		menu "Configuration"
+		depends on EXTERNAL_TOOLCHAIN && PACKAGE_libstdcpp
+	
+		config LIBSTDCPP_ROOT_DIR
+			string
+			prompt "libstdcpp shared library base directory"
+			depends on EXTERNAL_TOOLCHAIN && PACKAGE_libstdcpp
+			default TOOLCHAIN_ROOT  if !NATIVE_TOOLCHAIN
+			default "/"  if NATIVE_TOOLCHAIN
+	
+		config LIBSTDCPP_FILE_SPEC
+			string
+			prompt "libstdc++ shared library files (use wildcards)"
+			depends on EXTERNAL_TOOLCHAIN && PACKAGE_libstdcpp
+			default "./lib/libstdc++.so.*"
+	
+		endmenu
+
+	config PACKAGE_libthread-db
+		tristate "libthread-db...................... POSIX thread library debugging support"
+		default y if DEFAULT_libthread-db
+		default m if ALL
+		depends on !USE_MUSL
+		help
+		 POSIX thread library debugging support
+		 Felix Fietkau <nbd@openwrt.org>
+
+endmenu
+
+menu "Kernel modules"
+
+menu "I2C support"
+	config PACKAGE_kmod-i2c-gpio-custom
+		tristate "kmod-i2c-gpio-custom........................ Custom GPIO-based I2C device"
+		default y if DEFAULT_kmod-i2c-gpio-custom
+		default m if ALL_KMODS
+		depends on GPIO_SUPPORT
+		select PACKAGE_kmod-i2c-gpio
+		select PACKAGE_kmod-i2c-core
+		help
+		 Kernel module for register a custom i2c-gpio platform device.
+		 
+
+endmenu
+endmenu
+
+menu "Libraries"
+
+	config PACKAGE_libffmpeg-audio-dec
+		tristate "libffmpeg-audio-dec............................. FFmpeg libraries (audio)"
+		default y if DEFAULT_libffmpeg-audio-dec
+		default m if ALL
+		select PACKAGE_libc
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libbz2
+		select PACKAGE_libpthread
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_zlib
+		help
+		 FFmpeg is a a software package that can record, convert and stream digital
+		  audio and video in numerous formats.
+		 
+		  FFmpeg licensing / patent issues are complex. It is the reponsibility of the
+		  user to understand any requirements in this regard with its usage. See:
+		  https://ffmpeg.org/legal.html for further information.
+		  .
+		  This package contains FFmpeg shared libraries for audio decoding
+		 https://ffmpeg.org/
+		 Ted Hess <thess@kitschensync.net>, Ian Leonard <antonlacon@gmail.com>
+
+	menuconfig PACKAGE_libffmpeg-custom
+		tristate "libffmpeg-custom............................... FFmpeg libraries (custom)"
+		default y if DEFAULT_libffmpeg-custom
+		default m if ALL
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libopus if FFMPEG_CUSTOM_SELECT_libopus
+		select PACKAGE_shine if FFMPEG_CUSTOM_SELECT_libshine
+		depends on !ALL
+		select PACKAGE_zlib
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libbz2
+		select PACKAGE_libpthread
+		select PACKAGE_libc
+		help
+		 FFmpeg is a a software package that can record, convert and stream digital
+		  audio and video in numerous formats.
+		 
+		  FFmpeg licensing / patent issues are complex. It is the reponsibility of the
+		  user to understand any requirements in this regard with its usage. See:
+		  https://ffmpeg.org/legal.html for further information.
+		  .
+		  This package contains customized FFmpeg shared libraries.
+		 https://ffmpeg.org/
+		 Ted Hess <thess@kitschensync.net>, Ian Leonard <antonlacon@gmail.com>
+
+
+	source "package/ffmpeg/Config.in"
+
+	config PACKAGE_libffmpeg-full
+		tristate "libffmpeg-full................................... FFmpeg libraries (full)"
+		default y if DEFAULT_libffmpeg-full
+		default m if ALL
+		select PACKAGE_libc
+		select PACKAGE_libbz2
+		select PACKAGE_shine if SOFT_FLOAT
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libpthread
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_lame-lib if !SOFT_FLOAT
+		select PACKAGE_zlib
+		select PACKAGE_alsa-lib
+		select PACKAGE_libssp if SSP_SUPPORT
+		help
+		 FFmpeg is a a software package that can record, convert and stream digital
+		  audio and video in numerous formats.
+		 
+		  FFmpeg licensing / patent issues are complex. It is the reponsibility of the
+		  user to understand any requirements in this regard with its usage. See:
+		  https://ffmpeg.org/legal.html for further information.
+		  .
+		  This package contains full-featured FFmpeg shared libraries.
+		 https://ffmpeg.org/
+		 Ted Hess <thess@kitschensync.net>, Ian Leonard <antonlacon@gmail.com>
+
+	config PACKAGE_libffmpeg-mini
+		tristate "libffmpeg-mini................................... FFmpeg libraries (mini)"
+		default y if DEFAULT_libffmpeg-mini
+		default m if ALL
+		select PACKAGE_zlib
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libbz2
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libpthread
+		select PACKAGE_libc
+		help
+		 FFmpeg is a a software package that can record, convert and stream digital
+		  audio and video in numerous formats.
+		 
+		  FFmpeg licensing / patent issues are complex. It is the reponsibility of the
+		  user to understand any requirements in this regard with its usage. See:
+		  https://ffmpeg.org/legal.html for further information.
+		  .
+		  This package contains minimal-featured FFmpeg shared libraries.
+		 https://ffmpeg.org/
+		 Ted Hess <thess@kitschensync.net>, Ian Leonard <antonlacon@gmail.com>
+
+endmenu
+
+menu "Multimedia"
+
+	config PACKAGE_ffmpeg
+		tristate "ffmpeg.................................................... FFmpeg program"
+		default y if DEFAULT_ffmpeg
+		default m if ALL
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libffmpeg-full
+		select PACKAGE_libc
+		select PACKAGE_libpthread
+		select PACKAGE_librt if USE_GLIBC
+		help
+		 FFmpeg is a a software package that can record, convert and stream digital
+		  audio and video in numerous formats.
+		 
+		  FFmpeg licensing / patent issues are complex. It is the reponsibility of the
+		  user to understand any requirements in this regard with its usage. See:
+		  https://ffmpeg.org/legal.html for further information.
+		  .
+		  This package contains the FFmpeg command line tool.
+		 https://ffmpeg.org/
+		 Ted Hess <thess@kitschensync.net>, Ian Leonard <antonlacon@gmail.com>
+
+	config PACKAGE_ffmpeg-custom
+		tristate "ffmpeg-custom.................................... FFmpeg program (custom)"
+		default y if DEFAULT_ffmpeg-custom
+		default m if ALL
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libpthread
+		select PACKAGE_libc
+		depends on !ALL
+		depends on PACKAGE_libffmpeg-custom
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libpthread if USE_GLIBC
+		help
+		 FFmpeg is a a software package that can record, convert and stream digital
+		  audio and video in numerous formats.
+		 
+		  FFmpeg licensing / patent issues are complex. It is the reponsibility of the
+		  user to understand any requirements in this regard with its usage. See:
+		  https://ffmpeg.org/legal.html for further information.
+		  .
+		  This package contains the FFmpeg command line tool.
+		 https://ffmpeg.org/
+		 Ted Hess <thess@kitschensync.net>, Ian Leonard <antonlacon@gmail.com>
+
+	config PACKAGE_ffprobe
+		tristate "ffprobe...................................... FFmpeg CLI media identifier"
+		default y if DEFAULT_ffprobe
+		default m if ALL
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libpthread
+		select PACKAGE_libc
+		select PACKAGE_libffmpeg-full
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libpthread if USE_GLIBC
+		help
+		 FFmpeg is a a software package that can record, convert and stream digital
+		  audio and video in numerous formats.
+		 
+		  FFmpeg licensing / patent issues are complex. It is the reponsibility of the
+		  user to understand any requirements in this regard with its usage. See:
+		  https://ffmpeg.org/legal.html for further information.
+		  .
+		  This package contains the FFprobe command line tool.
+		 https://ffmpeg.org/
+		 Ted Hess <thess@kitschensync.net>, Ian Leonard <antonlacon@gmail.com>
+
+	config PACKAGE_ffprobe-custom
+		tristate "ffprobe-custom...................... FFmpeg CLI media identifier (custom)"
+		default y if DEFAULT_ffprobe-custom
+		default m if ALL
+		depends on PACKAGE_libffmpeg-custom
+		depends on !ALL
+		select PACKAGE_libc
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libpthread
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libssp if SSP_SUPPORT
+		help
+		 FFmpeg is a a software package that can record, convert and stream digital
+		  audio and video in numerous formats.
+		 
+		  FFmpeg licensing / patent issues are complex. It is the reponsibility of the
+		  user to understand any requirements in this regard with its usage. See:
+		  https://ffmpeg.org/legal.html for further information.
+		  .
+		  This package contains the FFprobe command line tool.
+		 https://ffmpeg.org/
+		 Ted Hess <thess@kitschensync.net>, Ian Leonard <antonlacon@gmail.com>
+
+	config PACKAGE_ffserver
+		tristate "ffserver......................................... FFmpeg streaming server"
+		default y if DEFAULT_ffserver
+		default m if ALL
+		select PACKAGE_libffmpeg-full
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libpthread
+		select PACKAGE_libc
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libssp if SSP_SUPPORT
+		help
+		 FFmpeg is a a software package that can record, convert and stream digital
+		  audio and video in numerous formats.
+		 
+		  FFmpeg licensing / patent issues are complex. It is the reponsibility of the
+		  user to understand any requirements in this regard with its usage. See:
+		  https://ffmpeg.org/legal.html for further information.
+		  .
+		  This package contains the FFmpeg streaming server.
+		 https://ffmpeg.org/
+		 Ted Hess <thess@kitschensync.net>, Ian Leonard <antonlacon@gmail.com>
+
+	config PACKAGE_ffserver-custom
+		tristate "ffserver-custom......................... FFmpeg streaming server (custom)"
+		default y if DEFAULT_ffserver-custom
+		default m if ALL
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libpthread
+		select PACKAGE_libc
+		depends on !ALL
+		depends on PACKAGE_libffmpeg-custom
+		help
+		 FFmpeg is a a software package that can record, convert and stream digital
+		  audio and video in numerous formats.
+		 
+		  FFmpeg licensing / patent issues are complex. It is the reponsibility of the
+		  user to understand any requirements in this regard with its usage. See:
+		  https://ffmpeg.org/legal.html for further information.
+		  .
+		  This package contains the FFmpeg streaming server.
+		 https://ffmpeg.org/
+		 Ted Hess <thess@kitschensync.net>, Ian Leonard <antonlacon@gmail.com>
+
+endmenu
+
+menu "Network"
+
+	config PACKAGE_ethtool
+		tristate "ethtool......................... Display or change ethernet card settings"
+		default y if DEFAULT_ethtool
+		default m if ALL
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libc
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libssp if SSP_SUPPORT
+		help
+		 ethtool is a small utility for examining and tuning your ethernet-based
+		  network interface
+		 http://www.kernel.org/pub/software/network/ethtool/
+		 Felix Fietkau <nbd@nbd.name>
+
+
+		config ETHTOOL_PRETTY_DUMP
+			depends on PACKAGE_ethtool
+			bool "Enable pretty printing"
+
+endmenu
+
+menu "Utilities"
+
+	config PACKAGE_ldconfig
+		tristate "ldconfig............................... Shared library path configuration"
+		default y if DEFAULT_ldconfig
+		default m if ALL
+		depends on !USE_MUSL
+		help
+		 Shared library path configuration
+		 Felix Fietkau <nbd@openwrt.org>
+
+
+		menu "Configuration"
+			depends on EXTERNAL_TOOLCHAIN && PACKAGE_ldconfig
+	
+		config LDCONFIG_ROOT_DIR
+			string
+			prompt "ldconfig base directory"
+			depends on EXTERNAL_TOOLCHAIN && PACKAGE_ldconfig
+			default TOOLCHAIN_ROOT  if !NATIVE_TOOLCHAIN
+			default "/"  if NATIVE_TOOLCHAIN
+	
+		config LDCONFIG_FILE_SPEC
+			string
+			prompt "ldconfig file"
+			depends on EXTERNAL_TOOLCHAIN && PACKAGE_ldconfig
+			default "./sbin/ldconfig"
+	
+		endmenu
+
+	config PACKAGE_ldd
+		tristate "ldd.................................................... LDD trace utility"
+		default y if DEFAULT_ldd
+		default m if ALL
+		depends on !USE_MUSL
+		help
+		 LDD trace utility
+		 Felix Fietkau <nbd@openwrt.org>
+
+
+		menu "Configuration"
+			depends on EXTERNAL_TOOLCHAIN && PACKAGE_ldd
+	
+		config LDD_ROOT_DIR
+			string
+			prompt "ldd trace utility base directory"
+			depends on EXTERNAL_TOOLCHAIN && PACKAGE_ldd
+			default TOOLCHAIN_ROOT  if !NATIVE_TOOLCHAIN
+			default "/"  if NATIVE_TOOLCHAIN
+	
+		config LDD_FILE_SPEC
+			string
+			prompt "ldd trace utility file"
+			depends on EXTERNAL_TOOLCHAIN && PACKAGE_ldd
+			default "./usr/bin/ldd"
+	
+		endmenu
+
+endmenu
+
+menu "Vecoo"
+
+menu "X15"
+	config PACKAGE_bufferalloc
+		tristate "bufferalloc.............................. x15 decoder bufferalloc library"
+		default y if DEFAULT_bufferalloc
+		default m if ALL
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libc
+		help
+		 infotm x15 decoder bufferalloc library
+		 
+
+	config PACKAGE_devmmu
+		tristate "devmmu........................................ x15 decoder devmmu library"
+		default y if DEFAULT_devmmu
+		default m if ALL
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libc
+		select PACKAGE_librt if USE_GLIBC
+		help
+		 infotm x15 decoder devmmu library
+		 
+
+	config PACKAGE_dmmu_lib
+		tristate "dmmu_lib.................................... x15 decoder dmmu_lib library"
+		default y if DEFAULT_dmmu_lib
+		default m if ALL
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libc
+		select PACKAGE_librt if USE_GLIBC
+		help
+		 infotm x15 decoder dmmu_lib library
+		 
+
+	config PACKAGE_foundations
+		tristate "foundations.............................. x15 decoder foundations library"
+		default y if DEFAULT_foundations
+		default m if ALL
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libc
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libssp if SSP_SUPPORT
+		help
+		 infotm x15 decoder foundations library
+		 
+
+	config PACKAGE_mediaion
+		tristate "mediaion.................................... x15 decoder mediaion library"
+		default y if DEFAULT_mediaion
+		default m if ALL
+		select PACKAGE_libc
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libssp if SSP_SUPPORT
+		help
+		 infotm x15 decoder mediaion library
+		 
+
+	config PACKAGE_omx
+		tristate "omx.............................................. x15 decoder omx library"
+		default y if DEFAULT_omx
+		default m if ALL
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libc
+		select PACKAGE_librt if USE_GLIBC
+		help
+		 infotm x15 decoder omx library
+		 
+
+	config PACKAGE_pmm_lib
+		tristate "pmm_lib...................................... x15 decoder pmm_lib library"
+		default y if DEFAULT_pmm_lib
+		default m if ALL
+		select PACKAGE_libc
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libpthread if USE_GLIBC
+		help
+		 infotm x15 decoder pmm_lib library
+		 
+
+	config PACKAGE_vdec_lib_g1
+		tristate "vdec_lib_g1.............................. x15 decoder vdec_lib_g1 library"
+		default y if DEFAULT_vdec_lib_g1
+		default m if ALL
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libc
+		select PACKAGE_librt if USE_GLIBC
+		help
+		 infotm x15 decoder vdec_lib_g1 library
+		 
+
+	config PACKAGE_venc_lib_8270
+		tristate "venc_lib_8270.......................... x15 decoder venc_lib_8270 library"
+		default y if DEFAULT_venc_lib_8270
+		default m if ALL
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libc
+		select PACKAGE_librt if USE_GLIBC
+		help
+		 infotm x15 decoder venc_lib_8270 library
+		 
+
+	config PACKAGE_videodec2
+		tristate "videodec2.................................. x15 decoder videodec2 library"
+		default y if DEFAULT_videodec2
+		default m if ALL
+		select PACKAGE_libc
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libstdcpp
+		select PACKAGE_libssp if SSP_SUPPORT
+		help
+		 infotm x15 decoder videodec2 library
+		 
+
+endmenu
+	config PACKAGE_ComputeLibrary
+		tristate "ComputeLibrary........................................ arm ComputeLibrary"
+		default y if DEFAULT_ComputeLibrary
+		default m if ALL
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libstdcpp
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libc
+		select PACKAGE_librt if USE_GLIBC
+		help
+		 arm ComputeLibrary
+		 
+
+	config PACKAGE_alsa
+		tristate "alsa..................................................... v5 alsa library"
+		default y if DEFAULT_alsa
+		default m if ALL
+		select PACKAGE_libc
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_middleware-libs
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libssp if SSP_SUPPORT
+		help
+		 contains many alsa libs
+		 
+
+	config PACKAGE_awTuningApp
+		tristate "awTuningApp.................................................. awTuningApp"
+		default y if DEFAULT_awTuningApp
+		default m if ALL
+		select PACKAGE_libc
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_middleware-libs
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libsample_confparser
+		select PACKAGE_libisp_ini
+		help
+		 it comes form v5 platform!
+		 
+
+	menuconfig PACKAGE_bluetooth
+		tristate "bluetooth....................................... Bluetooth APP(bsa 01062)"
+		default y if DEFAULT_bluetooth
+		default 1
+		select PACKAGE_libc
+		select PACKAGE_libpthread
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_alsa-lib
+		select PACKAGE_librt
+		select PACKAGE_libspeex-lite
+		select PACKAGE_libuci
+		select PACKAGE_libssp if SSP_SUPPORT
+		help
+		 Bluetooth API
+		 
+
+	config PACKAGE_bluetooth-demo
+		tristate "bluetooth-demo............................................... BT app demo"
+		default y if DEFAULT_bluetooth-demo
+		default m if ALL
+		select PACKAGE_libc
+		select PACKAGE_librt if USE_GLIBC
+		depends on PACKAGE_bluetooth
+		select PACKAGE_libstdcpp
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libssp if SSP_SUPPORT
+		help
+		 Bluetooth app demo
+		 
+
+	config PACKAGE_boot-play
+		tristate "boot-play...................................................... boot play"
+		default y if DEFAULT_boot-play
+		default m if ALL
+		select PACKAGE_tinymp3
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libc
+		help
+		 boot play
+		 
+
+	config PACKAGE_cameratest
+		tristate "cameratest.............................. camerateset test video recording"
+		default y if DEFAULT_cameratest
+		default m if ALL
+		select PACKAGE_libcedarx2.7
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libc
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libssp if SSP_SUPPORT
+		help
+		 CedarX2.6 recorder
+		 
+
+	config PACKAGE_client_local
+		tristate "client_local................................................ sample shane"
+		default y if DEFAULT_client_local
+		default m if ALL
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_middleware-libs
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libsample_confparser
+		select PACKAGE_libc
+		select PACKAGE_librt if USE_GLIBC
+		help
+		 it comes form v5 platform!
+		 
+
+	config PACKAGE_imgdecode
+		tristate "imgdecode............................................ tiny miniui library"
+		default y if DEFAULT_imgdecode
+		default m if ALL
+		select PACKAGE_libc
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libpng
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_zlib
+		help
+		 tiny miniui library
+		 
+
+	config PACKAGE_libcutils
+		tristate "libcutils....................................... libcutils from Android L"
+		default y if DEFAULT_libcutils
+		default m if ALL
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libc
+		select PACKAGE_librt if USE_GLIBC
+		help
+		 libcutils form Android L
+		 
+
+	config PACKAGE_libglog
+		tristate "libglog......................... C++ implementation of the Google logging"
+		default y if DEFAULT_libglog
+		default m if ALL
+		select PACKAGE_libstdcpp
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libc
+		help
+		 C++ implementation of the Google logging module
+		 
+
+	config PACKAGE_libhwdisplay
+		tristate "libhwdisplay.......................................... v5 display library"
+		default y if DEFAULT_libhwdisplay
+		default m if ALL
+		select PACKAGE_liblog
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libc
+		select PACKAGE_libcutils
+		select PACKAGE_librt if USE_GLIBC
+		help
+		 display library, it comes form v5 platform!
+		 
+
+	config PACKAGE_libion
+		tristate "libion.................................................... v5 ion library"
+		default y if DEFAULT_libion
+		default m if ALL
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_liblog
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libcutils
+		select PACKAGE_libc
+		help
+		 ion library, it comes form v5 platform!
+		 
+
+	config PACKAGE_libisp_ini
+		tristate "libisp_ini.............................. parser isp info from config file"
+		default y if DEFAULT_libisp_ini
+		default m if ALL
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_liblog
+		select PACKAGE_libc
+		select PACKAGE_librt if USE_GLIBC
+		help
+		 parser isp info from config file, come from v5 platform!
+		 
+
+	config PACKAGE_liblog
+		tristate "liblog.................................................... v5 log library"
+		default y if DEFAULT_liblog
+		default m if ALL
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libstdcpp
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libglog
+		select PACKAGE_libc
+		select PACKAGE_librt if USE_GLIBC
+		help
+		 log library, it comes form v5 platform!
+		 
+
+	config PACKAGE_libminui
+		tristate "libminui............................................. tiny miniui library"
+		default y if DEFAULT_libminui
+		default m if ALL
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_zlib
+		select PACKAGE_libc
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libpng
+		help
+		 tiny miniui library
+		 
+
+	config PACKAGE_libmpp_comm
+		tristate "libmpp_comm.......................................... v5 mpp comm library"
+		default y if DEFAULT_libmpp_comm
+		default m if ALL
+		select PACKAGE_libc
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_middleware-libs
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libsample_confparser
+		help
+		 mpp comm library, it comes form v5 platform!
+		 
+
+	config PACKAGE_libopencv
+		tristate "libopencv....................................... opencv3.2 userspace libs"
+		default y if DEFAULT_libopencv
+		default m if ALL
+		select PACKAGE_librt
+		select PACKAGE_libjpeg
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libstdcpp
+		select PACKAGE_libpng
+		select PACKAGE_glib2
+		select PACKAGE_libpthread
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libc
+		select PACKAGE_zlib
+		select PACKAGE_libpthread if USE_GLIBC
+		help
+		 opencv userspace libraries
+		 
+
+	config PACKAGE_libresample
+		tristate "libresample.................................................. libresample"
+		default y if DEFAULT_libresample
+		default m if ALL
+		select PACKAGE_libc
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libpthread if USE_GLIBC
+		help
+		 libresample
+		 
+
+	config PACKAGE_libsample_confparser
+		tristate "libsample_confparser........................ parser info from config file"
+		default y if DEFAULT_libsample_confparser
+		default m if ALL
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libc
+		select PACKAGE_middleware-libs
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libpthread if USE_GLIBC
+		help
+		 library of parser conf files, it comes form v5 platform!
+		 
+
+	config PACKAGE_libspeex-lite
+		tristate "libspeex-lite................................ tiny speex resample library"
+		default y if DEFAULT_libspeex-lite
+		default m if ALL
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libc
+		select PACKAGE_libpng
+		select PACKAGE_zlib
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libssp if SSP_SUPPORT
+		help
+		 tiny speex resample library
+		 
+
+	config PACKAGE_libsysutils
+		tristate "libsysutils................................... libsysutils from Android L"
+		default y if DEFAULT_libsysutils
+		default m if ALL
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libstdcpp
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libc
+		select PACKAGE_libcutils
+		select PACKAGE_librt if USE_GLIBC
+		help
+		 libsysutils form Android L
+		 
+
+	config PACKAGE_libuapi
+		tristate "libuapi............................................... unit api for vecoo"
+		default y if DEFAULT_libuapi
+		default m if ALL
+		select PACKAGE_libc
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libpthread if USE_GLIBC
+		help
+		 unit api for allwinner
+		 
+
+	config PACKAGE_libutils
+		tristate "libutils......................................... libutils from Android L"
+		default y if DEFAULT_libutils
+		default m if ALL
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libstdcpp
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libcutils
+		select PACKAGE_libc
+		help
+		 libutils form Android L
+		 
+
+	config PACKAGE_middleware-libs
+		tristate "middleware-libs.................................... V5 middleware library"
+		default y if DEFAULT_middleware-libs
+		default m if ALL
+		select PACKAGE_libisp_ini
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libc
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_liblog
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libhwdisplay
+		select PACKAGE_libstdcpp
+		select PACKAGE_libion
+		select PACKAGE_libcutils
+		help
+		 contains many middleware libs
+		 
+
+	config PACKAGE_misc-upgrade
+		tristate "misc-upgrade........................... read and write the misc partition"
+		default y if DEFAULT_misc-upgrade
+		default m if ALL
+		select PACKAGE_libc
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libssp if SSP_SUPPORT
+		help
+		 read and write the misc partition
+		 
+
+	config PACKAGE_mtop
+		tristate "mtop................................................ mtop for vecoo linux"
+		default y if DEFAULT_mtop
+		default m if ALL
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libc
+		help
+		 it comes from Android 4.2!!
+		 
+
+	config PACKAGE_nativepower
+		tristate "nativepower.................................... nativepower for allwinner"
+		default y if DEFAULT_nativepower
+		default m if ALL
+		select PACKAGE_libc
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libpthread
+		select PACKAGE_dbus
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libuci
+		select PACKAGE_libssp if SSP_SUPPORT
+		help
+		 Nativepower for Vecoo
+		 
+
+	config PACKAGE_rtsp
+		tristate "rtsp..................................................... sample for rtsp"
+		default y if DEFAULT_rtsp
+		default m if ALL
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libmpp_comm
+		select PACKAGE_middleware-libs
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libsample_confparser
+		select PACKAGE_libc
+		select PACKAGE_librt if USE_GLIBC
+		help
+		 it comes form v5 platform!
+		 
+
+	config PACKAGE_rtsp_client
+		tristate "rtsp_client................................................. sample shane"
+		default y if DEFAULT_rtsp_client
+		default m if ALL
+		select PACKAGE_libavformat
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libsample_confparser
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libc
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libmpp_comm
+		select PACKAGE_middleware-libs
+		help
+		 it comes form v5 platform!
+		 
+
+	config PACKAGE_rtsp_pusher
+		tristate "rtsp_pusher................................................. sample shane"
+		default y if DEFAULT_rtsp_pusher
+		default m if ALL
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libc
+		select PACKAGE_libmpp_comm
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_middleware-libs
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libsample_confparser
+		help
+		 it comes form v5 platform!
+		 
+
+	config PACKAGE_sample_ai2aenc2muxer
+		tristate "sample_ai2aenc2muxer............................ sample for ai2aenc2muxer"
+		default y if DEFAULT_sample_ai2aenc2muxer
+		default m if ALL
+		select PACKAGE_libc
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libsample_confparser
+		select PACKAGE_middleware-libs
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libpthread if USE_GLIBC
+		help
+		 it comes form v5 platform!
+		 
+
+	config PACKAGE_sample_demux2adec2ao
+		tristate "sample_demux2adec2ao............................ sample for demux2adec2ao"
+		default y if DEFAULT_sample_demux2adec2ao
+		default m if ALL
+		select PACKAGE_libsample_confparser
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_middleware-libs
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libc
+		select PACKAGE_librt if USE_GLIBC
+		help
+		 it comes form v5 platform!
+		 
+
+	config PACKAGE_sample_demux2vdec2vo
+		tristate "sample_demux2vdec2vo............................ sample for demux2vdec2vo"
+		default y if DEFAULT_sample_demux2vdec2vo
+		default m if ALL
+		select PACKAGE_middleware-libs
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libsample_confparser
+		select PACKAGE_libc
+		select PACKAGE_librt if USE_GLIBC
+		help
+		 it comes form v5 platform!
+		 
+
+	config PACKAGE_sample_vi2venc
+		tristate "sample_vi2venc....................................... sample for virvi2vo"
+		default y if DEFAULT_sample_vi2venc
+		default m if ALL
+		select PACKAGE_libc
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libsample_confparser
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_middleware-libs
+		select PACKAGE_libstdcpp
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libmpp_comm
+		help
+		 it comes form v5 platform!
+		 
+
+	config PACKAGE_sample_vi2venc_vdec2vo
+		tristate "sample_vi2venc_vdec2vo...................................... sample shane"
+		default y if DEFAULT_sample_vi2venc_vdec2vo
+		default m if ALL
+		select PACKAGE_libmpp_comm
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_middleware-libs
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libsample_confparseir
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libc
+		help
+		 it comes form v5 platform!
+		 
+
+	config PACKAGE_sample_virvi2fish2venc
+		tristate "sample_virvi2fish2venc........................ sample for virvi2fish2venc"
+		default y if DEFAULT_sample_virvi2fish2venc
+		default m if ALL
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libc
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_middleware-libs
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libsample_confparser
+		help
+		 it comes form v5 platform!
+		 
+
+	config PACKAGE_sample_virvi2fish2vo
+		tristate "sample_virvi2fish2vo............................ sample for virvi2fish2vo"
+		default y if DEFAULT_sample_virvi2fish2vo
+		default m if ALL
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libc
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_middleware-libs
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libsample_confparser
+		help
+		 it comes form v5 platform!
+		 
+
+	config PACKAGE_sample_virvi2venc2muxer
+		tristate "sample_virvi2venc2muxer...................... sample for virvi2venc2muxer"
+		default y if DEFAULT_sample_virvi2venc2muxer
+		default m if ALL
+		select PACKAGE_libsample_confparser
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_middleware-libs
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libc
+		select PACKAGE_librt if USE_GLIBC
+		help
+		 it comes form v5 platform!
+		 
+
+	config PACKAGE_sample_virvi2vo
+		tristate "sample_virvi2vo...................................... sample for virvi2vo"
+		default y if DEFAULT_sample_virvi2vo
+		default m if ALL
+		select PACKAGE_middleware-libs
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libsample_confparser
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libc
+		help
+		 it comes form v5 platform!
+		 
+
+	config PACKAGE_sample_vo
+		tristate "sample_vo.................................................. sample for vo"
+		default y if DEFAULT_sample_vo
+		default m if ALL
+		select PACKAGE_libsample_confparser
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_middleware-libs
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libc
+		select PACKAGE_librt if USE_GLIBC
+		help
+		 it comes form v5 platform!
+		 
+
+	config PACKAGE_server_local
+		tristate "server_local................................................ sample shane"
+		default y if DEFAULT_server_local
+		default m if ALL
+		select PACKAGE_middleware-libs
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libsample_confparser
+		select PACKAGE_libc
+		select PACKAGE_librt if USE_GLIBC
+		help
+		 it comes form v5 platform!
+		 
+
+	config PACKAGE_shane_client
+		tristate "shane_client................................................ sample shane"
+		default y if DEFAULT_shane_client
+		default m if ALL
+		select PACKAGE_libc
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libsample_confparser
+		select PACKAGE_middleware-libs
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libssp if SSP_SUPPORT
+		help
+		 it comes form v5 platform!
+		 
+
+	config PACKAGE_shane_server
+		tristate "shane_server................................................ sample shane"
+		default y if DEFAULT_shane_server
+		default m if ALL
+		select PACKAGE_middleware-libs
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libsample_confparser
+		select PACKAGE_libc
+		select PACKAGE_librt if USE_GLIBC
+		help
+		 it comes form v5 platform!
+		 
+
+	menuconfig PACKAGE_smartlinkd
+		tristate "smartlinkd........................................... smartlinkd for Tina"
+		default y if DEFAULT_smartlinkd
+		default m if ALL
+		select PACKAGE_alsa-lib
+		select PACKAGE_libstdcpp
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_softap
+		select PACKAGE_libpthread
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libc
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_wifimanager
+		help
+		 wifi configuration for none input platform
+		 
+
+	config PACKAGE_smartlinkd-demo
+		tristate "smartlinkd-demo.......................................... smartlinkd demo"
+		default y if DEFAULT_smartlinkd-demo
+		default m if ALL
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libc
+		depends on PACKAGE_smartlinkd
+		select PACKAGE_librt if USE_GLIBC
+		help
+		 client demo
+		 
+
+	config PACKAGE_smartlinkd-dhd_priv
+		tristate "smartlinkd-dhd_priv.................................. smartlinkd dhd_priv"
+		default y if DEFAULT_smartlinkd-dhd_priv
+		default m if ALL
+		select PACKAGE_libc
+		depends on PACKAGE_smartlinkd
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libssp if SSP_SUPPORT
+		help
+		 dhd_priv demo
+		 
+
+	config PACKAGE_smartlinkd-smartlink_raw
+		tristate "smartlinkd-smartlink_raw........................ smartlinkd smartlink_raw"
+		default y if DEFAULT_smartlinkd-smartlink_raw
+		default m if ALL
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libpthread if USE_GLIBC
+		depends on PACKAGE_smartlinkd
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libc
+		help
+		 smartlink_raw demo
+		 
+
+	config PACKAGE_smartlinkd-smartlink_softAP
+		tristate "smartlinkd-smartlink_softAP............. smartlinkd smartlink_softAP demo"
+		default y if DEFAULT_smartlinkd-smartlink_softAP
+		default m if ALL
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_librt if USE_GLIBC
+		depends on PACKAGE_smartlinkd
+		select PACKAGE_libc
+		help
+		 smartlinkd smartlink_softAP demo
+		 
+
+	config PACKAGE_smartlinkd-smartlink_soundwaves
+		tristate "smartlinkd-smartlink_soundwaves..... smartlinkd smartlink_soundwaves demo"
+		default y if DEFAULT_smartlinkd-smartlink_soundwaves
+		default m if ALL
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_librt if USE_GLIBC
+		depends on PACKAGE_smartlinkd
+		select PACKAGE_libc
+		help
+		 smartlinkd smartlink_soundwaves demo
+		 
+
+	menuconfig PACKAGE_softap
+		tristate "softap............................................... Tina softap manager"
+		default y if DEFAULT_softap
+		default 1
+		select PACKAGE_libopenssl
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libstdcpp
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libpthread
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libc
+		help
+		 Tina softap manager
+		 
+
+	config PACKAGE_softap-demo
+		tristate "softap-demo......................................... Tina softap app demo"
+		default y if DEFAULT_softap-demo
+		default m if ALL
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libc
+		depends on PACKAGE_softap
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libssp if SSP_SUPPORT
+		help
+		 Tina softap app demo
+		 
+
+	config PACKAGE_speech
+		tristate "speech............................................................ speech"
+		default y if DEFAULT_speech
+		default m if ALL
+		select PACKAGE_alsa-lib
+		select PACKAGE_libstdcpp
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libresample
+		select PACKAGE_libc
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libpthread
+		select PACKAGE_libpthread if USE_GLIBC
+		help
+		 speech
+		 
+
+	config PACKAGE_tcp_client
+		tristate "tcp_client.................................................. sample shane"
+		default y if DEFAULT_tcp_client
+		default m if ALL
+		select PACKAGE_libmpp_comm
+		select PACKAGE_middleware-libs
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libsample_confparser
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libc
+		help
+		 it comes form v5 platform!
+		 
+
+	config PACKAGE_tcp_server
+		tristate "tcp_server.................................................. sample shane"
+		default y if DEFAULT_tcp_server
+		default m if ALL
+		select PACKAGE_libsample_confparser
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libmpp_comm
+		select PACKAGE_middleware-libs
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libc
+		select PACKAGE_librt if USE_GLIBC
+		help
+		 it comes form v5 platform!
+		 
+
+	config PACKAGE_tcp_server_local
+		tristate "tcp_server_local............................................ sample shane"
+		default y if DEFAULT_tcp_server_local
+		default m if ALL
+		select PACKAGE_libc
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libsample_confparser
+		select PACKAGE_libmpp_comm
+		select PACKAGE_middleware-libs
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libssp if SSP_SUPPORT
+		help
+		 it comes form v5 platform!
+		 
+
+	config PACKAGE_tinaplayerdemo
+		tristate "tinaplayerdemo................ CedarX2.6 tina player utils for softwinner"
+		default y if DEFAULT_tinaplayerdemo
+		default m if ALL
+		select PACKAGE_libcedarx2.7
+		select PACKAGE_libc
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_alsa-utils
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libssp if SSP_SUPPORT
+		help
+		 CedarX2.6 tina player
+		 
+
+	config PACKAGE_tinarecorderdemo
+		tristate "tinarecorderdemo.................. CedarX2.6 recorder utils for allwinner"
+		default y if DEFAULT_tinarecorderdemo
+		default m if ALL
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libc
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libcedarx2.7
+		help
+		 CedarX2.6 recorder
+		 
+
+	config PACKAGE_tinymp3
+		tristate "tinymp3.................................................. tiny mp3 player"
+		default y if DEFAULT_tinymp3
+		default m if ALL
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libmad
+		select PACKAGE_alsa-lib
+		select PACKAGE_libc
+		select PACKAGE_libpthread
+		select PACKAGE_librt if USE_GLIBC
+		help
+		 tiny mp3 player
+		 
+
+	config PACKAGE_tplayerdemo
+		tristate "tplayerdemo................................ tplayerdemo which use tplayer"
+		default y if DEFAULT_tplayerdemo
+		default m if ALL
+		select PACKAGE_libcedarx2.7
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libc
+		select PACKAGE_alsa-utils
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libssp if SSP_SUPPORT
+		help
+		 CedarX2.7 tplayerdemo
+		 
+
+	config PACKAGE_trecorderdemo
+		tristate "trecorderdemo..................... CedarX2.7 recorder utils for allwinner"
+		default y if DEFAULT_trecorderdemo
+		default m if ALL
+		select PACKAGE_libcedarx2.7
+		select PACKAGE_libc
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libssp if SSP_SUPPORT
+		help
+		 CedarX2.7 recorder
+		 
+
+	config PACKAGE_tsc_demo
+		tristate "tsc_demo................................................... tsc test demo"
+		default y if DEFAULT_tsc_demo
+		default m if ALL
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libc
+		help
+		 tsc_test_demo
+		 
+
+	menuconfig PACKAGE_wifimanager
+		tristate "wifimanager............................................ Tina wifi manager"
+		default y if DEFAULT_wifimanager
+		default 1
+		select PACKAGE_libssp if SSP_SUPPORT
+		select PACKAGE_libstdcpp
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libc
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libpthread
+		help
+		 Tina wifi manager
+		 
+
+	config PACKAGE_wifimanager-demo
+		tristate "wifimanager-demo...................................... Tina wifi app demo"
+		default y if DEFAULT_wifimanager-demo
+		default m if ALL
+		select PACKAGE_librt if USE_GLIBC
+		select PACKAGE_libc
+		select PACKAGE_libpthread if USE_GLIBC
+		select PACKAGE_libssp if SSP_SUPPORT
+		depends on PACKAGE_wifimanager
+		help
+		 Tina wifi app demo
+		 
+
+endmenu
+

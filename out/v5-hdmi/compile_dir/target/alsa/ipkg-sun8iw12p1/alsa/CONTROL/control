@@ -1,0 +1,8 @@
+Package: alsa
+Version: 1
+Depends: libc, libssp, librt, libpthread, middleware-libs
+Source: package/vecoo/alsa
+Section: libs
+Architecture: sun8iw12p1
+Installed-Size: 34376
+Description:  contains many alsa libs

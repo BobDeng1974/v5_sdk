@@ -1,0 +1,8 @@
+Package: libion
+Version: 1
+Depends: libc, libssp, librt, libpthread, liblog, libcutils
+Source: package/vecoo/libion
+Section: libs
+Architecture: sun8iw12p1
+Installed-Size: 4608
+Description:  ion library, it comes form v5 platform!

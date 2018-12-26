@@ -1,0 +1,29 @@
+Source-Makefile: target/vecoo/v5-hdmi/Makefile
+Target: v5-hdmi
+Target-Board: v5-hdmi
+Target-Name: v5-hdmi
+Target-Path: /home/shane/Downloads/action/New_SDK/Vecoo-SDK-v5-hdmi.Linux-x86_64
+Target-Arch: arm
+Target-Arch-Packages: sun8iw12p1
+Target-Features: display dt ext4 fpu gpio rtc usb
+Target-Depends: 
+Target-Optimization: -Os -pipe -march=armv7-a -mtune=cortex-a7 -mfpu=neon
+CPU-Type: cortex-a7+neon
+Linux-Version: 4.4.55
+Linux-Release: 1
+Linux-Kernel-Arch: arm
+Target-Description:
+
+@@
+Default-Packages: base-files libc libgcc busybox dropbear mtd uci opkg netifd fstools uclient-fetch   
+Target-Profile: 
+Target-Profile-Name: vecoo
+Target-Profile-Packages:  
+Target-Profile-Config: 
+
+@@
+Target-Profile-Description:
+
+@@
+
+

@@ -1,0 +1,18 @@
+Source-Makefile: package/vecoo/sample/sample_demux2vdec2vo/Makefile
+Package: sample_demux2vdec2vo
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +middleware-libs +libsample_confparser
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: sample for demux2vdec2vo
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	it comes form v5 platform!
+
+@@
+
+

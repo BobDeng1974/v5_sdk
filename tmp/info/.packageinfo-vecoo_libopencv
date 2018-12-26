@@ -1,0 +1,18 @@
+Source-Makefile: package/vecoo/libopencv/Makefile
+Package: libopencv
+Version: 3.2.0-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libpthread +librt +libstdcpp +libjpeg +libpng +zlib +glib2
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vecoo
+Category: Vecoo
+Title: opencv3.2 userspace libs
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	opencv userspace libraries
+
+@@
+
+

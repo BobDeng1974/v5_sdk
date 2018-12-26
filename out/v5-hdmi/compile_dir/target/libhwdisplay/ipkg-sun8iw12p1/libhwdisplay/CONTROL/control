@@ -1,0 +1,8 @@
+Package: libhwdisplay
+Version: 1
+Depends: libc, libssp, librt, libpthread, liblog, libcutils
+Source: package/vecoo/display
+Section: libs
+Architecture: sun8iw12p1
+Installed-Size: 8368
+Description:  display library, it comes form v5 platform!

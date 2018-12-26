@@ -1,0 +1,8 @@
+Package: libcutils
+Version: 1-1
+Depends: libc, libssp, librt, libpthread
+Source: package/vecoo/libs/libcutils
+Section: utils
+Architecture: sun8iw12p1
+Installed-Size: 14867
+Description:  libcutils form Android L

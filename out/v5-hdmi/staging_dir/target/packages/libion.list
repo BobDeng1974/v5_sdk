@@ -1,0 +1,15 @@
+./
+./usr
+./usr/lib
+./usr/lib/libion.so
+./usr/include
+./usr/include/plat_errno.h
+./usr/include/ion_memmanager.h
+./usr/include/dup2SeldomUsedFd.h
+./usr/include/plat_math.h
+./usr/include/aw_type.h
+./usr/include/plat_defines.h
+./usr/include/cdx_list.h
+./usr/include/plat_log.h
+./usr/include/plat_type.h
+./host

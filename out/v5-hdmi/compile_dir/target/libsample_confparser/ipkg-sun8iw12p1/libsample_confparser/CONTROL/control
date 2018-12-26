@@ -1,0 +1,8 @@
+Package: libsample_confparser
+Version: 1
+Depends: libc, libssp, librt, libpthread, middleware-libs
+Source: package/vecoo/sample/configfileparser
+Section: libs
+Architecture: sun8iw12p1
+Installed-Size: 2355
+Description:  library of parser conf files, it comes form v5 platform!

@@ -1,0 +1,18 @@
+Source-Makefile: package/vecoo/liblog/Makefile
+Package: liblog
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libstdcpp +libglog
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Vecoo
+Title: v5 log library
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	log library, it comes form v5 platform!
+
+@@
+
+

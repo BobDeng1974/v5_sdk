@@ -1,0 +1,8 @@
+Package: rtsp
+Version: 1
+Depends: libc, libssp, librt, libpthread, middleware-libs, libsample_confparser, libmpp_comm
+Source: package/rtsp
+Section: utils
+Architecture: sun8iw12p1
+Installed-Size: 81231
+Description:  it comes form v5 platform!

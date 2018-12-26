@@ -1,0 +1,2043 @@
+Source-Makefile: package/ethtool/Makefile
+Package: ethtool
+Version: 4.19-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Title: Display or change ethernet card settings
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Source: ethtool-4.19.tar.xz
+License: GPL-2.0
+LicenseFiles: COPYING
+Type: ipkg
+Description:  ethtool is a small utility for examining and tuning your ethernet-based
+ network interface
+http://www.kernel.org/pub/software/network/ethtool/
+Felix Fietkau <nbd@nbd.name>
+@@
+Config:
+	config ETHTOOL_PRETTY_DUMP
+		depends on PACKAGE_ethtool
+		bool "Enable pretty printing"
+@@
+
+
+Source-Makefile: package/ffmpeg/Makefile
+Package: ffmpeg
+Version: 3.2.12-5
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libpthread +libffmpeg-full
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: full
+Section: multimedia
+Category: Multimedia
+Title: FFmpeg program
+Maintainer: Ted Hess <thess@kitschensync.net>, Ian Leonard <antonlacon@gmail.com>
+Source: ffmpeg-3.2.12.tar.xz
+License: LGPL-2.1+ GPL-2+ LGPL-3
+LicenseFiles: COPYING.GPLv2 COPYING.GPLv3 COPYING.LGPLv2.1 COPYING.LGPLv3
+Type: ipkg
+Description:  FFmpeg is a a software package that can record, convert and stream digital
+ audio and video in numerous formats.
+
+ FFmpeg licensing / patent issues are complex. It is the reponsibility of the
+ user to understand any requirements in this regard with its usage. See:
+ https://ffmpeg.org/legal.html for further information.
+ .
+ This package contains the FFmpeg command line tool.
+https://ffmpeg.org/
+Ted Hess <thess@kitschensync.net>, Ian Leonard <antonlacon@gmail.com>
+@@
+
+Package: ffprobe
+Version: 3.2.12-5
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libpthread +libffmpeg-full
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: full
+Section: multimedia
+Category: Multimedia
+Title: FFmpeg CLI media identifier
+Maintainer: Ted Hess <thess@kitschensync.net>, Ian Leonard <antonlacon@gmail.com>
+Source: ffmpeg-3.2.12.tar.xz
+License: LGPL-2.1+ GPL-2+ LGPL-3
+LicenseFiles: COPYING.GPLv2 COPYING.GPLv3 COPYING.LGPLv2.1 COPYING.LGPLv3
+Type: ipkg
+Description:  FFmpeg is a a software package that can record, convert and stream digital
+ audio and video in numerous formats.
+
+ FFmpeg licensing / patent issues are complex. It is the reponsibility of the
+ user to understand any requirements in this regard with its usage. See:
+ https://ffmpeg.org/legal.html for further information.
+ .
+ This package contains the FFprobe command line tool.
+https://ffmpeg.org/
+Ted Hess <thess@kitschensync.net>, Ian Leonard <antonlacon@gmail.com>
+@@
+
+Package: ffserver
+Version: 3.2.12-5
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libpthread +libffmpeg-full
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: full
+Section: multimedia
+Category: Multimedia
+Title: FFmpeg streaming server
+Maintainer: Ted Hess <thess@kitschensync.net>, Ian Leonard <antonlacon@gmail.com>
+Source: ffmpeg-3.2.12.tar.xz
+License: LGPL-2.1+ GPL-2+ LGPL-3
+LicenseFiles: COPYING.GPLv2 COPYING.GPLv3 COPYING.LGPLv2.1 COPYING.LGPLv3
+Type: ipkg
+Description:  FFmpeg is a a software package that can record, convert and stream digital
+ audio and video in numerous formats.
+
+ FFmpeg licensing / patent issues are complex. It is the reponsibility of the
+ user to understand any requirements in this regard with its usage. See:
+ https://ffmpeg.org/legal.html for further information.
+ .
+ This package contains the FFmpeg streaming server.
+https://ffmpeg.org/
+Ted Hess <thess@kitschensync.net>, Ian Leonard <antonlacon@gmail.com>
+@@
+
+Package: ffmpeg-custom
+Version: 3.2.12-5
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libpthread @!ALL libffmpeg-custom
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: custom
+Section: multimedia
+Category: Multimedia
+Title: FFmpeg program (custom)
+Maintainer: Ted Hess <thess@kitschensync.net>, Ian Leonard <antonlacon@gmail.com>
+Source: ffmpeg-3.2.12.tar.xz
+License: LGPL-2.1+ GPL-2+ LGPL-3
+LicenseFiles: COPYING.GPLv2 COPYING.GPLv3 COPYING.LGPLv2.1 COPYING.LGPLv3
+Type: ipkg
+Description:  FFmpeg is a a software package that can record, convert and stream digital
+ audio and video in numerous formats.
+
+ FFmpeg licensing / patent issues are complex. It is the reponsibility of the
+ user to understand any requirements in this regard with its usage. See:
+ https://ffmpeg.org/legal.html for further information.
+ .
+ This package contains the FFmpeg command line tool.
+https://ffmpeg.org/
+Ted Hess <thess@kitschensync.net>, Ian Leonard <antonlacon@gmail.com>
+@@
+
+Package: ffprobe-custom
+Version: 3.2.12-5
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libpthread @!ALL libffmpeg-custom
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: custom
+Section: multimedia
+Category: Multimedia
+Title: FFmpeg CLI media identifier (custom)
+Maintainer: Ted Hess <thess@kitschensync.net>, Ian Leonard <antonlacon@gmail.com>
+Source: ffmpeg-3.2.12.tar.xz
+License: LGPL-2.1+ GPL-2+ LGPL-3
+LicenseFiles: COPYING.GPLv2 COPYING.GPLv3 COPYING.LGPLv2.1 COPYING.LGPLv3
+Type: ipkg
+Description:  FFmpeg is a a software package that can record, convert and stream digital
+ audio and video in numerous formats.
+
+ FFmpeg licensing / patent issues are complex. It is the reponsibility of the
+ user to understand any requirements in this regard with its usage. See:
+ https://ffmpeg.org/legal.html for further information.
+ .
+ This package contains the FFprobe command line tool.
+https://ffmpeg.org/
+Ted Hess <thess@kitschensync.net>, Ian Leonard <antonlacon@gmail.com>
+@@
+
+Package: ffserver-custom
+Version: 3.2.12-5
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libpthread @!ALL libffmpeg-custom
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: custom
+Section: multimedia
+Category: Multimedia
+Title: FFmpeg streaming server (custom)
+Maintainer: Ted Hess <thess@kitschensync.net>, Ian Leonard <antonlacon@gmail.com>
+Source: ffmpeg-3.2.12.tar.xz
+License: LGPL-2.1+ GPL-2+ LGPL-3
+LicenseFiles: COPYING.GPLv2 COPYING.GPLv3 COPYING.LGPLv2.1 COPYING.LGPLv3
+Type: ipkg
+Description:  FFmpeg is a a software package that can record, convert and stream digital
+ audio and video in numerous formats.
+
+ FFmpeg licensing / patent issues are complex. It is the reponsibility of the
+ user to understand any requirements in this regard with its usage. See:
+ https://ffmpeg.org/legal.html for further information.
+ .
+ This package contains the FFmpeg streaming server.
+https://ffmpeg.org/
+Ted Hess <thess@kitschensync.net>, Ian Leonard <antonlacon@gmail.com>
+@@
+
+Package: libffmpeg-audio-dec
+Version: 3.2.12-5
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libpthread +libpthread +zlib +libbz2
+Conflicts: 
+Menu-Depends: 
+Provides: libffmpeg
+Build-Variant: audio-dec
+Section: libs
+Category: Libraries
+Title: FFmpeg libraries (audio)
+Maintainer: Ted Hess <thess@kitschensync.net>, Ian Leonard <antonlacon@gmail.com>
+Source: ffmpeg-3.2.12.tar.xz
+License: LGPL-2.1+ GPL-2+ LGPL-3
+LicenseFiles: COPYING.GPLv2 COPYING.GPLv3 COPYING.LGPLv2.1 COPYING.LGPLv3
+Type: ipkg
+Description:  FFmpeg is a a software package that can record, convert and stream digital
+ audio and video in numerous formats.
+
+ FFmpeg licensing / patent issues are complex. It is the reponsibility of the
+ user to understand any requirements in this regard with its usage. See:
+ https://ffmpeg.org/legal.html for further information.
+ .
+ This package contains FFmpeg shared libraries for audio decoding
+https://ffmpeg.org/
+Ted Hess <thess@kitschensync.net>, Ian Leonard <antonlacon@gmail.com>
+@@
+
+Package: libffmpeg-full
+Version: 3.2.12-5
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libpthread +libpthread +zlib +libbz2 +alsa-lib +PACKAGE_libopus:libopus +SOFT_FLOAT:shine +!SOFT_FLOAT:lame-lib +PACKAGE_libx264:libx264
+Conflicts: 
+Menu-Depends: 
+Provides: libffmpeg
+Build-Variant: full
+Section: libs
+Category: Libraries
+Title: FFmpeg libraries (full)
+Maintainer: Ted Hess <thess@kitschensync.net>, Ian Leonard <antonlacon@gmail.com>
+Source: ffmpeg-3.2.12.tar.xz
+License: LGPL-2.1+ GPL-2+ LGPL-3
+LicenseFiles: COPYING.GPLv2 COPYING.GPLv3 COPYING.LGPLv2.1 COPYING.LGPLv3
+Type: ipkg
+Description:  FFmpeg is a a software package that can record, convert and stream digital
+ audio and video in numerous formats.
+
+ FFmpeg licensing / patent issues are complex. It is the reponsibility of the
+ user to understand any requirements in this regard with its usage. See:
+ https://ffmpeg.org/legal.html for further information.
+ .
+ This package contains full-featured FFmpeg shared libraries.
+https://ffmpeg.org/
+Ted Hess <thess@kitschensync.net>, Ian Leonard <antonlacon@gmail.com>
+@@
+
+Package: libffmpeg-mini
+Version: 3.2.12-5
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libpthread +libpthread +zlib +libbz2
+Conflicts: 
+Menu-Depends: 
+Provides: libffmpeg
+Build-Variant: mini
+Section: libs
+Category: Libraries
+Title: FFmpeg libraries (mini)
+Maintainer: Ted Hess <thess@kitschensync.net>, Ian Leonard <antonlacon@gmail.com>
+Source: ffmpeg-3.2.12.tar.xz
+License: LGPL-2.1+ GPL-2+ LGPL-3
+LicenseFiles: COPYING.GPLv2 COPYING.GPLv3 COPYING.LGPLv2.1 COPYING.LGPLv3
+Type: ipkg
+Description:  FFmpeg is a a software package that can record, convert and stream digital
+ audio and video in numerous formats.
+
+ FFmpeg licensing / patent issues are complex. It is the reponsibility of the
+ user to understand any requirements in this regard with its usage. See:
+ https://ffmpeg.org/legal.html for further information.
+ .
+ This package contains minimal-featured FFmpeg shared libraries.
+https://ffmpeg.org/
+Ted Hess <thess@kitschensync.net>, Ian Leonard <antonlacon@gmail.com>
+@@
+
+Package: libffmpeg-custom
+Menu: 1
+Version: 3.2.12-5
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libpthread +libpthread +zlib +libbz2 @!ALL +FFMPEG_CUSTOM_SELECT_libopus:libopus +PACKAGE_libx264:libx264 +PACKAGE_lame-lib:lame-lib +FFMPEG_CUSTOM_SELECT_libshine:shine +PACKAGE_fdk-aac:fdk-aac
+Conflicts: 
+Menu-Depends: 
+Provides: libffmpeg
+Build-Variant: custom
+Section: libs
+Category: Libraries
+Title: FFmpeg libraries (custom)
+Maintainer: Ted Hess <thess@kitschensync.net>, Ian Leonard <antonlacon@gmail.com>
+Source: ffmpeg-3.2.12.tar.xz
+License: LGPL-2.1+ GPL-2+ LGPL-3
+LicenseFiles: COPYING.GPLv2 COPYING.GPLv3 COPYING.LGPLv2.1 COPYING.LGPLv3
+Type: ipkg
+Description:  FFmpeg is a a software package that can record, convert and stream digital
+ audio and video in numerous formats.
+
+ FFmpeg licensing / patent issues are complex. It is the reponsibility of the
+ user to understand any requirements in this regard with its usage. See:
+ https://ffmpeg.org/legal.html for further information.
+ .
+ This package contains customized FFmpeg shared libraries.
+https://ffmpeg.org/
+Ted Hess <thess@kitschensync.net>, Ian Leonard <antonlacon@gmail.com>
+@@
+Config:
+source "package/ffmpeg/Config.in"
+@@
+
+
+Source-Makefile: package/i2c-gpio-custom/Makefile
+Package: kmod-i2c-gpio-custom
+Submenu: I2C support
+Version: <LINUX_VERSION>-2
+Depends: @GPIO_SUPPORT +kmod-i2c-core +kmod-i2c-gpio
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: kernel
+Category: Kernel modules
+Title: Custom GPIO-based I2C device
+Maintainer: 
+Source: 
+Type: ipkg
+Package-Subdir: kernel
+Description:  Kernel module for register a custom i2c-gpio platform device.
+
+@@
+
+
+Source-Makefile: package/rtsp/Makefile
+Package: rtsp
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +middleware-libs +libsample_confparser +libmpp_comm
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: sample for rtsp
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	it comes form v5 platform!
+
+@@
+
+
+Source-Makefile: package/rtsp_client/Makefile
+Package: rtsp_client
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +middleware-libs +libsample_confparser +libmpp_comm +libavformat
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: sample shane
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	it comes form v5 platform!
+
+@@
+
+
+Source-Makefile: package/rtsp_pusher/Makefile
+Package: rtsp_pusher
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +middleware-libs +libsample_confparser +libmpp_comm
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: sample shane
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	it comes form v5 platform!
+
+@@
+
+
+Source-Makefile: package/sample_vi2venc_vdec2vo/Makefile
+Package: sample_vi2venc_vdec2vo
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +middleware-libs +libsample_confparseir +libmpp_comm
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: sample shane
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	it comes form v5 platform!
+
+@@
+
+
+Source-Makefile: package/tcp_client/Makefile
+Package: tcp_client
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +middleware-libs +libsample_confparser +libmpp_comm
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: sample shane
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	it comes form v5 platform!
+
+@@
+
+
+Source-Makefile: package/tcp_server/Makefile
+Package: tcp_server
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +middleware-libs +libsample_confparser +libmpp_comm
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: sample shane
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	it comes form v5 platform!
+
+@@
+
+
+Source-Makefile: package/tcp_server_local/Makefile
+Package: tcp_server_local
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +middleware-libs +libsample_confparser +libmpp_comm
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: sample shane
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	it comes form v5 platform!
+
+@@
+
+
+Source-Makefile: package/toolchain/Makefile
+Package: libc
+Version: <LIBC_VERSION>-1
+Depends: +libgcc
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Base system
+Title: C library
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Source: 
+License: GPL-3.0-with-GCC-exception
+Type: ipkg
+Description: C library
+Felix Fietkau <nbd@openwrt.org>
+@@
+Config:
+	menu "Configuration"
+	depends on EXTERNAL_TOOLCHAIN && PACKAGE_libc
+
+	config LIBC_ROOT_DIR
+		string
+		prompt "libc shared library base directory"
+		depends on EXTERNAL_TOOLCHAIN && PACKAGE_libc
+		default TOOLCHAIN_ROOT  if !NATIVE_TOOLCHAIN
+		default "/"  if NATIVE_TOOLCHAIN
+
+	config LIBC_FILE_SPEC
+		string
+		prompt "libc shared library files (use wildcards)"
+		depends on EXTERNAL_TOOLCHAIN && PACKAGE_libc
+		default "./lib/ld{-*.so,-linux*.so.*} ./lib/lib{anl,c,gomp,cidn,crypt,dl,m,nsl,nss_dns,nss_files,resolv,util}{-*.so,.so.*}"
+
+	endmenu
+@@
+
+Package: libgcc
+Version: <LIBGCC_VERSION>-1
+Depends: 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Base system
+Title: GCC support library
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Source: 
+License: GPL-3.0-with-GCC-exception
+Type: ipkg
+Description: GCC support library
+http://gcc.gnu.org/
+Felix Fietkau <nbd@openwrt.org>
+@@
+Config:
+	menu "Configuration"
+		depends on EXTERNAL_TOOLCHAIN && PACKAGE_libgcc
+
+	config LIBGCC_ROOT_DIR
+		string
+		prompt "libgcc shared library base directory"
+		depends on EXTERNAL_TOOLCHAIN && PACKAGE_libgcc
+		default TOOLCHAIN_ROOT  if !NATIVE_TOOLCHAIN
+		default "/"  if NATIVE_TOOLCHAIN
+
+	config LIBGCC_FILE_SPEC
+		string
+		prompt "libgcc shared library files (use wildcards)"
+		depends on EXTERNAL_TOOLCHAIN && PACKAGE_libgcc
+		default "./lib/libgcc_s.so.*"
+
+	endmenu
+@@
+
+Package: libatomic
+Version: <LIBGCC_VERSION>-1
+Depends: +libgcc
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Base system
+Title: Atomic support library
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Source: 
+License: GPL-3.0-with-GCC-exception
+Type: ipkg
+Description: Atomic support library
+http://gcc.gnu.org/
+Felix Fietkau <nbd@openwrt.org>
+@@
+Config:
+	menu "Configuration"
+		depends on EXTERNAL_TOOLCHAIN && PACKAGE_libatomic
+
+	config LIBATOMIC_ROOT_DIR
+		string
+		prompt "libatomic shared library base directory"
+		depends on EXTERNAL_TOOLCHAIN && PACKAGE_libatomic
+		default TOOLCHAIN_ROOT  if !NATIVE_TOOLCHAIN
+		default "/"  if NATIVE_TOOLCHAIN
+
+	config LIBATOMIC_FILE_SPEC
+		string
+		prompt "libatomic shared library files (use wildcards)"
+		depends on EXTERNAL_TOOLCHAIN && PACKAGE_libatomic
+		default "./lib/libatomic.so.*"
+
+	endmenu
+@@
+
+Package: libssp
+Version: <LIBGCC_VERSION>-1
+Depends:  @SSP_SUPPORT
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Base system
+Title: GCC support library
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Source: 
+License: GPL-3.0-with-GCC-exception
+Type: ipkg
+Description: GCC support library
+http://gcc.gnu.org/
+Felix Fietkau <nbd@openwrt.org>
+@@
+Config:
+	menu "Configuration"
+		depends on EXTERNAL_TOOLCHAIN && PACKAGE_libssp
+
+	config LIBSSP_ROOT_DIR
+		string
+		prompt "libssp shared library base directory"
+		depends on EXTERNAL_TOOLCHAIN && PACKAGE_libssp
+		default TOOLCHAIN_ROOT  if !NATIVE_TOOLCHAIN
+		default "/"  if NATIVE_TOOLCHAIN
+
+	config LIBSSP_FILE_SPEC
+		string
+		prompt "libssp shared library files (use wildcards)"
+		depends on EXTERNAL_TOOLCHAIN && PACKAGE_libssp
+		default "./lib/libssp.so.*"
+
+	endmenu
+@@
+
+Package: libstdcpp
+Version: <LIBGCC_VERSION>-1
+Depends: 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Base system
+Title: GNU Standard C++ Library v3
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Source: 
+License: GPL-3.0-with-GCC-exception
+Type: ipkg
+Description: GNU Standard C++ Library v3
+http://gcc.gnu.org/
+Felix Fietkau <nbd@openwrt.org>
+@@
+Config:
+	menu "Configuration"
+	depends on EXTERNAL_TOOLCHAIN && PACKAGE_libstdcpp
+
+	config LIBSTDCPP_ROOT_DIR
+		string
+		prompt "libstdcpp shared library base directory"
+		depends on EXTERNAL_TOOLCHAIN && PACKAGE_libstdcpp
+		default TOOLCHAIN_ROOT  if !NATIVE_TOOLCHAIN
+		default "/"  if NATIVE_TOOLCHAIN
+
+	config LIBSTDCPP_FILE_SPEC
+		string
+		prompt "libstdc++ shared library files (use wildcards)"
+		depends on EXTERNAL_TOOLCHAIN && PACKAGE_libstdcpp
+		default "./lib/libstdc++.so.*"
+
+	endmenu
+@@
+
+Package: libpthread
+Version: <LIBC_VERSION>-1
+Depends: +libgcc
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Base system
+Title: POSIX thread library
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Source: 
+License: GPL-3.0-with-GCC-exception
+Type: ipkg
+Description: POSIX thread library
+Felix Fietkau <nbd@openwrt.org>
+@@
+Config:
+	menu "Configuration"
+	depends on EXTERNAL_TOOLCHAIN && PACKAGE_libpthread
+
+	config LIBPTHREAD_ROOT_DIR
+		string
+		prompt "libpthread shared library base directory"
+		depends on EXTERNAL_TOOLCHAIN && PACKAGE_libpthread
+		default TOOLCHAIN_ROOT  if !NATIVE_TOOLCHAIN
+		default "/"  if NATIVE_TOOLCHAIN
+
+	config LIBPTHREAD_FILE_SPEC
+		string
+		prompt "libpthread shared library files (use wildcards)"
+		depends on EXTERNAL_TOOLCHAIN && PACKAGE_libpthread
+		default "./lib/libpthread{-*.so,.so.*}"
+
+	endmenu
+@@
+
+Package: libthread-db
+Version: <LIBC_VERSION>-1
+Depends: @!USE_MUSL
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Base system
+Title: POSIX thread library debugging support
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Source: 
+License: GPL-3.0-with-GCC-exception
+Type: ipkg
+Description: POSIX thread library debugging support
+Felix Fietkau <nbd@openwrt.org>
+@@
+
+Package: librt
+Version: <LIBC_VERSION>-1
+Depends: +libpthread
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Base system
+Title: POSIX.1b RealTime extension library
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Source: 
+License: GPL-3.0-with-GCC-exception
+Type: ipkg
+Description: POSIX.1b RealTime extension library
+Felix Fietkau <nbd@openwrt.org>
+@@
+Config:
+	menu "Configuration"
+	depends on EXTERNAL_TOOLCHAIN && PACKAGE_librt
+
+	config LIBRT_ROOT_DIR
+		string
+		prompt "librt shared library base directory"
+		depends on EXTERNAL_TOOLCHAIN && PACKAGE_librt
+		default TOOLCHAIN_ROOT  if !NATIVE_TOOLCHAIN
+		default "/"  if NATIVE_TOOLCHAIN
+
+	config LIBRT_FILE_SPEC
+		string
+		prompt "librt shared library files (use wildcards)"
+		depends on EXTERNAL_TOOLCHAIN && PACKAGE_librt
+		default "./lib/librt{-*.so,.so.*}"
+
+	endmenu
+@@
+
+Package: libgfortran
+Version: <LIBGCC_VERSION>-1
+Depends:  @INSTALL_GFORTRAN
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Base system
+Title: GFortran support library
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Source: 
+License: GPL-3.0-with-GCC-exception
+Type: ipkg
+Description: GFortran support library
+http://gcc.gnu.org/
+Felix Fietkau <nbd@openwrt.org>
+@@
+Config:
+	menu "Configuration"
+		depends on EXTERNAL_TOOLCHAIN && PACKAGE_libgfortran
+
+	config LIBGFORTRAN_ROOT_DIR
+		string
+		prompt "libgfortran shared library base directory"
+		depends on EXTERNAL_TOOLCHAIN && PACKAGE_libgfortran
+		default TOOLCHAIN_ROOT  if !NATIVE_TOOLCHAIN
+		default "/"  if NATIVE_TOOLCHAIN
+
+	config LIBGFORTRAN_FILE_SPEC
+		string
+		prompt "libgfortran shared library files (use wildcards)"
+		depends on EXTERNAL_TOOLCHAIN && PACKAGE_libgfortran
+		default "./usr/lib/libgfortran.so.*"
+
+	endmenu
+@@
+
+Package: ldd
+Version: <LIBC_VERSION>-1
+Depends: @!USE_MUSL
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Title: LDD trace utility
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Source: 
+License: GPL-3.0-with-GCC-exception
+Type: ipkg
+Description: LDD trace utility
+Felix Fietkau <nbd@openwrt.org>
+@@
+Config:
+	menu "Configuration"
+		depends on EXTERNAL_TOOLCHAIN && PACKAGE_ldd
+
+	config LDD_ROOT_DIR
+		string
+		prompt "ldd trace utility base directory"
+		depends on EXTERNAL_TOOLCHAIN && PACKAGE_ldd
+		default TOOLCHAIN_ROOT  if !NATIVE_TOOLCHAIN
+		default "/"  if NATIVE_TOOLCHAIN
+
+	config LDD_FILE_SPEC
+		string
+		prompt "ldd trace utility file"
+		depends on EXTERNAL_TOOLCHAIN && PACKAGE_ldd
+		default "./usr/bin/ldd"
+
+	endmenu
+@@
+
+Package: ldconfig
+Version: <LIBC_VERSION>-1
+Depends: @!USE_MUSL
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Title: Shared library path configuration
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Source: 
+License: GPL-3.0-with-GCC-exception
+Type: ipkg
+Description: Shared library path configuration
+Felix Fietkau <nbd@openwrt.org>
+@@
+Config:
+	menu "Configuration"
+		depends on EXTERNAL_TOOLCHAIN && PACKAGE_ldconfig
+
+	config LDCONFIG_ROOT_DIR
+		string
+		prompt "ldconfig base directory"
+		depends on EXTERNAL_TOOLCHAIN && PACKAGE_ldconfig
+		default TOOLCHAIN_ROOT  if !NATIVE_TOOLCHAIN
+		default "/"  if NATIVE_TOOLCHAIN
+
+	config LDCONFIG_FILE_SPEC
+		string
+		prompt "ldconfig file"
+		depends on EXTERNAL_TOOLCHAIN && PACKAGE_ldconfig
+		default "./sbin/ldconfig"
+
+	endmenu
+@@
+
+
+Source-Makefile: package/udp_client/Makefile
+Package: shane_server
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +middleware-libs +libsample_confparser
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: sample shane
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	it comes form v5 platform!
+
+@@
+
+
+Source-Makefile: package/udp_server/Makefile
+Package: shane_client
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +middleware-libs +libsample_confparser
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: sample shane
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	it comes form v5 platform!
+
+@@
+
+
+Source-Makefile: package/v5_client_local/Makefile
+Package: client_local
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +middleware-libs +libsample_confparser
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: sample shane
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	it comes form v5 platform!
+
+@@
+
+
+Source-Makefile: package/v5_server_local/Makefile
+Package: server_local
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +middleware-libs +libsample_confparser
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: sample shane
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	it comes form v5 platform!
+
+@@
+
+
+Source-Makefile: package/vecoo/ComputeLibrary/Makefile
+Package: ComputeLibrary
+Version: 17.06-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libstdcpp
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vecoo
+Category: Vecoo
+Title: arm ComputeLibrary
+Maintainer: 
+Source: ComputeLibrary-17.06.tar.bz2
+LicenseFiles: COPYING
+Type: ipkg
+Description:   arm ComputeLibrary
+
+@@
+
+
+Source-Makefile: package/vecoo/alsa/Makefile
+Package: alsa
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +middleware-libs
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Vecoo
+Title: v5 alsa library
+Maintainer: 
+Source: 
+Type: ipkg
+Description:   contains many alsa libs
+
+@@
+
+
+Source-Makefile: package/vecoo/bluetooth/Makefile
+Package: bluetooth
+Menu: 1
+Default: 1
+Version: 0.0.1-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libpthread +librt +alsa-lib +libspeex-lite +libuci
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: Bluetooth APP(bsa 01062)
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	Bluetooth API
+
+@@
+
+Package: bluetooth-demo
+Version: 0.0.1-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread bluetooth +libstdcpp
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: BT app demo
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	Bluetooth app demo
+
+@@
+
+
+Source-Makefile: package/vecoo/boot-play/Makefile
+Package: boot-play
+Version: 1-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +tinymp3
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: boot play
+Maintainer: 
+Source: 
+Type: ipkg
+Description: boot play
+
+@@
+
+
+Source-Makefile: package/vecoo/cameratest/Makefile
+Package: cameratest
+Version: 2.0-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libcedarx2.7
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: camerateset test video recording
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	CedarX2.6 recorder
+
+@@
+
+
+Source-Makefile: package/vecoo/display/Makefile
+Package: libhwdisplay
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +liblog +libcutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Vecoo
+Title: v5 display library
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	display library, it comes form v5 platform!
+
+@@
+
+
+Source-Makefile: package/vecoo/glog/Makefile
+Package: libglog
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libstdcpp
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Vecoo
+Title: C++ implementation of the Google logging
+Maintainer: 
+Source: 
+Type: ipkg
+Description:   C++ implementation of the Google logging module
+
+@@
+
+
+Source-Makefile: package/vecoo/imgdecode/Makefile
+Package: imgdecode
+Version: 1-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +zlib +libpng
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: tiny miniui library
+Maintainer: 
+Source: 
+Type: ipkg
+Description: tiny miniui library
+
+@@
+
+
+Source-Makefile: package/vecoo/isp_tool_module/Makefile
+Package: awTuningApp
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +middleware-libs +libisp_ini +libsample_confparser
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: awTuningApp
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	it comes form v5 platform!
+
+@@
+
+
+Source-Makefile: package/vecoo/libion/Makefile
+Package: libion
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +liblog +libcutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Vecoo
+Title: v5 ion library
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	ion library, it comes form v5 platform!
+
+@@
+
+
+Source-Makefile: package/vecoo/libisp/Makefile
+Package: libisp_ini
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +liblog
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Vecoo
+Title: parser isp info from config file
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	parser isp info from config file, come from v5 platform!
+
+@@
+
+
+Source-Makefile: package/vecoo/liblog/Makefile
+Package: liblog
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libstdcpp +libglog
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Vecoo
+Title: v5 log library
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	log library, it comes form v5 platform!
+
+@@
+
+
+Source-Makefile: package/vecoo/libminui/Makefile
+Package: libminui
+Version: 1-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +zlib +libpng
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: tiny miniui library
+Maintainer: 
+Source: 
+Type: ipkg
+Description: tiny miniui library
+
+@@
+
+
+Source-Makefile: package/vecoo/libopencv/Makefile
+Package: libopencv
+Version: 3.2.0-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libpthread +librt +libstdcpp +libjpeg +libpng +zlib +glib2
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vecoo
+Category: Vecoo
+Title: opencv3.2 userspace libs
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	opencv userspace libraries
+
+@@
+
+
+Source-Makefile: package/vecoo/libs/libawresample/Makefile
+Package: libresample
+Version: 1-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: libresample
+Maintainer: 
+Source: 
+Type: ipkg
+Description:   libresample
+
+@@
+
+
+Source-Makefile: package/vecoo/libs/libcutils/Makefile
+Package: libcutils
+Version: 1-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: libcutils from Android L
+Maintainer: 
+Source: 
+Type: ipkg
+Description:   libcutils form Android L
+
+@@
+
+
+Source-Makefile: package/vecoo/libs/libsysutils/Makefile
+Package: libsysutils
+Version: 1-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libstdcpp +libcutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: libsysutils from Android L
+Maintainer: 
+Source: 
+Type: ipkg
+Description:   libsysutils form Android L
+
+@@
+
+
+Source-Makefile: package/vecoo/libs/libutils/Makefile
+Package: libutils
+Version: 1-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libstdcpp +libcutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: libutils from Android L
+Maintainer: 
+Source: 
+Type: ipkg
+Description:   libutils form Android L
+
+@@
+
+
+Source-Makefile: package/vecoo/libspeex-lite/Makefile
+Package: libspeex-lite
+Version: 1-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +zlib +libpng
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: tiny speex resample library
+Maintainer: 
+Source: 
+Type: ipkg
+Description: tiny speex resample library
+
+@@
+
+
+Source-Makefile: package/vecoo/libuapi/Makefile
+Package: libuapi
+Version: 1-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: unit api for vecoo
+Maintainer: 
+Source: 
+Type: ipkg
+Description:   unit api for allwinner
+
+@@
+
+
+Source-Makefile: package/vecoo/middleware-libs/Makefile
+Package: middleware-libs
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libstdcpp +libcutils +liblog +libion +libhwdisplay +libisp_ini
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Vecoo
+Title: V5 middleware library
+Maintainer: 
+Source: 
+Type: ipkg
+Description:   contains many middleware libs
+
+@@
+
+
+Source-Makefile: package/vecoo/misc-upgrade/Makefile
+Package: misc-upgrade
+Version: 0.0.1-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: read and write the misc partition
+Maintainer: 
+Source: 
+Type: ipkg
+Description: read and write the misc partition
+
+@@
+
+
+Source-Makefile: package/vecoo/mpp_comm/Makefile
+Package: libmpp_comm
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +middleware-libs +libsample_confparser
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Vecoo
+Title: v5 mpp comm library
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	mpp comm library, it comes form v5 platform!
+
+@@
+
+
+Source-Makefile: package/vecoo/mtop/Makefile
+Package: mtop
+Version: 0.5-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: mtop for vecoo linux
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	it comes from Android 4.2!!
+
+@@
+
+
+Source-Makefile: package/vecoo/nativepower/Makefile
+Package: nativepower
+Version: 1-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libpthread +libuci +dbus
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: nativepower for allwinner
+Maintainer: 
+Source: 
+Type: ipkg
+Description:   Nativepower for Vecoo
+
+@@
+
+
+Source-Makefile: package/vecoo/sample/configfileparser/Makefile
+Package: libsample_confparser
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +middleware-libs
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Vecoo
+Title: parser info from config file
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	library of parser conf files, it comes form v5 platform!
+
+@@
+
+
+Source-Makefile: package/vecoo/sample/sample_ai2aenc2muxer/Makefile
+Package: sample_ai2aenc2muxer
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +middleware-libs +libsample_confparser
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: sample for ai2aenc2muxer
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	it comes form v5 platform!
+
+@@
+
+
+Source-Makefile: package/vecoo/sample/sample_demux2adec2ao/Makefile
+Package: sample_demux2adec2ao
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +middleware-libs +libsample_confparser
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: sample for demux2adec2ao
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	it comes form v5 platform!
+
+@@
+
+
+Source-Makefile: package/vecoo/sample/sample_demux2vdec2vo/Makefile
+Package: sample_demux2vdec2vo
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +middleware-libs +libsample_confparser
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: sample for demux2vdec2vo
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	it comes form v5 platform!
+
+@@
+
+
+Source-Makefile: package/vecoo/sample/sample_vi2venc/Makefile
+Package: sample_vi2venc
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libstdcpp +middleware-libs +libsample_confparser +libmpp_comm
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: sample for virvi2vo
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	it comes form v5 platform!
+
+@@
+
+
+Source-Makefile: package/vecoo/sample/sample_virvi2fish2venc/Makefile
+Package: sample_virvi2fish2venc
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +middleware-libs +libsample_confparser
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: sample for virvi2fish2venc
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	it comes form v5 platform!
+
+@@
+
+
+Source-Makefile: package/vecoo/sample/sample_virvi2fish2vo/Makefile
+Package: sample_virvi2fish2vo
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +middleware-libs +libsample_confparser
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: sample for virvi2fish2vo
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	it comes form v5 platform!
+
+@@
+
+
+Source-Makefile: package/vecoo/sample/sample_virvi2venc2muxer_stabilization_video/Makefile
+Package: sample_virvi2venc2muxer
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +middleware-libs +libsample_confparser
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: sample for virvi2venc2muxer
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	it comes form v5 platform!
+
+@@
+
+
+Source-Makefile: package/vecoo/sample/sample_virvi2vo/Makefile
+Package: sample_virvi2vo
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +middleware-libs +libsample_confparser
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: sample for virvi2vo
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	it comes form v5 platform!
+
+@@
+
+
+Source-Makefile: package/vecoo/sample/sample_vo/Makefile
+Package: sample_vo
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +middleware-libs +libsample_confparser
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: sample for vo
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	it comes form v5 platform!
+
+@@
+
+
+Source-Makefile: package/vecoo/smartlinkd/Makefile
+Package: smartlinkd
+Menu: 1
+Version: 0.2.2-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libpthread +libstdcpp +alsa-lib +wifimanager +softap
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: smartlinkd for Tina
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	wifi configuration for none input platform
+
+@@
+
+Package: smartlinkd-demo
+Version: 0.2.2-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread smartlinkd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: smartlinkd demo
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	client demo
+
+@@
+
+Package: smartlinkd-dhd_priv
+Version: 0.2.2-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread smartlinkd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: smartlinkd dhd_priv
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	dhd_priv demo
+
+@@
+
+Package: smartlinkd-smartlink_raw
+Version: 0.2.2-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread smartlinkd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: smartlinkd smartlink_raw
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	smartlink_raw demo
+
+@@
+
+Package: smartlinkd-smartlink_softAP
+Version: 0.2.2-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread smartlinkd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: smartlinkd smartlink_softAP demo
+Maintainer: 
+Source: 
+Type: ipkg
+Description: smartlinkd smartlink_softAP demo
+
+@@
+
+Package: smartlinkd-smartlink_soundwaves
+Version: 0.2.2-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread smartlinkd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: smartlinkd smartlink_soundwaves demo
+Maintainer: 
+Source: 
+Type: ipkg
+Description: smartlinkd smartlink_soundwaves demo
+
+@@
+
+
+Source-Makefile: package/vecoo/softap/Makefile
+Package: softap
+Menu: 1
+Default: 1
+Version: 0.0.1-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libpthread +libstdcpp +libopenssl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: Tina softap manager
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	Tina softap manager
+
+@@
+
+Package: softap-demo
+Version: 0.0.1-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread softap +softap
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: Tina softap app demo
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	Tina softap app demo
+
+@@
+
+
+Source-Makefile: package/vecoo/speech/Makefile
+Package: speech
+Version: 0.0.11-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libpthread +libstdcpp +alsa-lib +libresample
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: speech
+Maintainer: 
+Source: 
+Type: ipkg
+Description: speech
+
+@@
+
+
+Source-Makefile: package/vecoo/tina_multimedia/Makefile
+
+Source-Makefile: package/vecoo/tinaplayerdemo/Makefile
+Package: tinaplayerdemo
+Version: 1-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libcedarx2.7 +alsa-utils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: CedarX2.6 tina player utils for softwinner
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	CedarX2.6 tina player
+
+@@
+
+
+Source-Makefile: package/vecoo/tinarecorderdemo/Makefile
+Package: tinarecorderdemo
+Version: 1-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libcedarx2.7
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: CedarX2.6 recorder utils for allwinner
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	CedarX2.6 recorder
+
+@@
+
+
+Source-Makefile: package/vecoo/tinymp3/Makefile
+Package: tinymp3
+Version: 1-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libpthread +libmad +alsa-lib
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: tiny mp3 player
+Maintainer: 
+Source: 
+Type: ipkg
+Description: tiny mp3 player
+
+@@
+
+
+Source-Makefile: package/vecoo/tplayerdemo/Makefile
+Package: tplayerdemo
+Version: 1-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libcedarx2.7 +alsa-utils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: tplayerdemo which use tplayer
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	CedarX2.7 tplayerdemo
+
+@@
+
+
+Source-Makefile: package/vecoo/trecorderdemo/Makefile
+Package: trecorderdemo
+Version: 1-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libcedarx2.7
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: CedarX2.7 recorder utils for allwinner
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	CedarX2.7 recorder
+
+@@
+
+
+Source-Makefile: package/vecoo/tsc_demo/Makefile
+Package: tsc_demo
+Version: 1-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: tsc test demo
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	tsc_test_demo
+
+@@
+
+
+Source-Makefile: package/vecoo/wifimanager/Makefile
+Package: wifimanager
+Menu: 1
+Default: 1
+Version: 0.0.1-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libpthread +libstdcpp
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: Tina wifi manager
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	Tina wifi manager
+
+@@
+
+Package: wifimanager-demo
+Version: 0.0.1-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread wifimanager +wifimanager
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: Tina wifi app demo
+Maintainer: 
+Source: 
+Type: ipkg
+Description: 	Tina wifi app demo
+
+@@
+
+
+Source-Makefile: package/vecoo/x15/bufferalloc/Makefile
+Package: bufferalloc
+Submenu: X15
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: x15 decoder bufferalloc library
+Maintainer: 
+Source: 
+Type: ipkg
+Description:   infotm x15 decoder bufferalloc library
+
+@@
+
+
+Source-Makefile: package/vecoo/x15/devmmu/Makefile
+Package: devmmu
+Submenu: X15
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: x15 decoder devmmu library
+Maintainer: 
+Source: 
+Type: ipkg
+Description:   infotm x15 decoder devmmu library
+
+@@
+
+
+Source-Makefile: package/vecoo/x15/dmmu_lib/Makefile
+Package: dmmu_lib
+Submenu: X15
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: x15 decoder dmmu_lib library
+Maintainer: 
+Source: 
+Type: ipkg
+Description:   infotm x15 decoder dmmu_lib library
+
+@@
+
+
+Source-Makefile: package/vecoo/x15/foundations/Makefile
+Package: foundations
+Submenu: X15
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: x15 decoder foundations library
+Maintainer: 
+Source: 
+Type: ipkg
+Description:   infotm x15 decoder foundations library
+
+@@
+
+
+Source-Makefile: package/vecoo/x15/mediaion/Makefile
+Package: mediaion
+Submenu: X15
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: x15 decoder mediaion library
+Maintainer: 
+Source: 
+Type: ipkg
+Description:   infotm x15 decoder mediaion library
+
+@@
+
+
+Source-Makefile: package/vecoo/x15/omx/Makefile
+Package: omx
+Submenu: X15
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: x15 decoder omx library
+Maintainer: 
+Source: 
+Type: ipkg
+Description:   infotm x15 decoder omx library
+
+@@
+
+
+Source-Makefile: package/vecoo/x15/pmm_lib/Makefile
+Package: pmm_lib
+Submenu: X15
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: x15 decoder pmm_lib library
+Maintainer: 
+Source: 
+Type: ipkg
+Description:   infotm x15 decoder pmm_lib library
+
+@@
+
+
+Source-Makefile: package/vecoo/x15/vdec_lib_g1/Makefile
+Package: vdec_lib_g1
+Submenu: X15
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: x15 decoder vdec_lib_g1 library
+Maintainer: 
+Source: 
+Type: ipkg
+Description:   infotm x15 decoder vdec_lib_g1 library
+
+@@
+
+
+Source-Makefile: package/vecoo/x15/venc_lib_8270/Makefile
+Package: venc_lib_8270
+Submenu: X15
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: x15 decoder venc_lib_8270 library
+Maintainer: 
+Source: 
+Type: ipkg
+Description:   infotm x15 decoder venc_lib_8270 library
+
+@@
+
+
+Source-Makefile: package/vecoo/x15/videodec2/Makefile
+Package: videodec2
+Submenu: X15
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread +libstdcpp
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: x15 decoder videodec2 library
+Maintainer: 
+Source: 
+Type: ipkg
+Description:   infotm x15 decoder videodec2 library
+
+@@
+
+

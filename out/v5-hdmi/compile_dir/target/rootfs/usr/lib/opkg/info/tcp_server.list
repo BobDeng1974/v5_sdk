@@ -1,0 +1,4 @@
+/usr/bin/tcp_server
+/usr/bin/resetIP.sh
+/etc/init.d/autorun
+/usr/bin/autosetting.sh

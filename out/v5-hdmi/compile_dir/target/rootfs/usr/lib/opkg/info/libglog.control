@@ -1,0 +1,8 @@
+Package: libglog
+Version: 1
+Depends: libc, libssp, librt, libpthread, libstdcpp
+Source: package/vecoo/glog
+Section: libs
+Architecture: sun8iw12p1
+Installed-Size: 36361
+Description:  C++ implementation of the Google logging module

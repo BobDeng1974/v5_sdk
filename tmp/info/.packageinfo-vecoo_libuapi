@@ -1,0 +1,18 @@
+Source-Makefile: package/vecoo/libuapi/Makefile
+Package: libuapi
+Version: 1-1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: unit api for vecoo
+Maintainer: 
+Source: 
+Type: ipkg
+Description:   unit api for allwinner
+
+@@
+
+

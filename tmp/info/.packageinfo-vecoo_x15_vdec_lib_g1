@@ -1,0 +1,19 @@
+Source-Makefile: package/vecoo/x15/vdec_lib_g1/Makefile
+Package: vdec_lib_g1
+Submenu: X15
+Version: 1
+Depends: +libc +SSP_SUPPORT:libssp +USE_GLIBC:librt +USE_GLIBC:libpthread 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Vecoo
+Title: x15 decoder vdec_lib_g1 library
+Maintainer: 
+Source: 
+Type: ipkg
+Description:   infotm x15 decoder vdec_lib_g1 library
+
+@@
+
+
